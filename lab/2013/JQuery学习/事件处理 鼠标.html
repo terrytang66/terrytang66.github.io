@@ -1,0 +1,41 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>DOM</title>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+
+<script language="javascript" type="text/javascript">
+
+/*页面加载事件处理程序*/
+window.onload=function  () {
+	var btnAdd=document.getElementById("btnAdd");
+	btnAdd.onclick=btn_onclick;
+	btnAdd.onmousedown=btn_onmousedown;
+	btnAdd.onmouseup=btn_onmouseup;
+}
+
+/*鼠标单击事件处理程序*/
+
+function btn_onclick(){
+	document.getElementById("div").innerHTML+="<p>Click</p>";
+
+}
+/*鼠标按下事件处理程序*/
+function btn_onmousedown(){
+	document.getElementById("div").innerHTML+="<p>Mousedown</p>";
+
+}
+/*释放鼠标事件处理程序*/
+function btn_onmouseup(){
+	document.getElementById("div").innerHTML+="<p>Mouseup</p>";
+
+}
+
+</script>
+</head>
+<body>
+	<input type="button" id="btnAdd" value="Add"/>
+	<div id="div"></div>
+</body>
+</html>

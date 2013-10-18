@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("td span").css('color','#aaa');
+	$("td").focusin(function(){
+		$(this).find("span").css('color','#000').css('font-weight','600');
+
+	});
+
+	$("td").focusout(function(){
+		$(this).find("span").css('color','#aaa').css('font-weight','100');	
+	});
+});
+</script>
+<title>注册表单</title>
+</head>
+<body>
+	<h2>用户注册</h2>
+	<form>
+		<table cellspacing="0" border="0">
+			<tr>
+				<td>用户名：</td>
+				<td><input/><span>6~20位字母、数字、下划线组合</span></td>
+			</tr>
+			<tr>
+				<td>密码：</td>
+				<td><input/><span>5~6位任意字符</span></td>
+			</tr>
+			<tr>
+				<td>姓名：</td>
+				<td><input/><span>请填写你的真实姓名</span></td>
+			</tr>
+			<tr>
+				<td>邮箱：</td>
+				<td><input/><span>请填写你的电子邮箱，确认身份时需要</span></td>
+			</tr>
+			<tr>
+				<td>年龄：</td>
+				<td><input/><span>请填写你的真实年龄</span></td>
+			</tr>
+		    <tr>
+				<td>电话：</td>
+				<td><input/><span>请填写你的家庭电话或者手机号码</span></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="button" value="Submit"/></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

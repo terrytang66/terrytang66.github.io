@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="cache-control" content="no-cache,must-revalidate">
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+<title>表单选择器</title>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(":text").attr("value","文本框");
+	$(":password").attr("value","密码框");
+	$(":radio:eq(0)").attr("value","true");
+	$(":checkbox").attr("checked","true");
+	$(":image").attr("src","xx.jpg");
+	$(":file").css("width","200px");
+	$(":hidden").attr("value","已保存的值");
+	$("select").css("background","#FCF");
+	$(":submit").attr("id","btn1");
+	$(":reset").attr("name","btn");
+	$("textarea").attr("value","文本区域");
+})
+</script>
+</head>
+<body>
+	<table width="645" height="145" border="1">
+		<tr>
+			<td width="89" height="23">文本框</td>
+			<td width="194"><input type="text"></td>
+			<td width="74">密码框</td>
+			<td width="260"><input type="password"></td>
+		</tr>
+		<tr>
+			<td width="24">单选按钮</td>
+			<td><input type="radio"><input type="radio"></td>
+			<td>复选框</td>
+			<td ><input type="checkbox"><input type="checkbox"></td>
+		</tr>
+		<tr>
+			<td width="36">图像</td>
+			<td><input type="image"></td>
+			<td>文件域</td>
+			<td ><input type="file"></td>
+		</tr>
+		<tr>
+			<td width="23">隐藏域</td>
+			<td><input type="hidden"></td>
+			<td>下拉列表</td>
+			<td ><select><option>选项一</option>
+				<option>选项二</option>
+				<option>选项三</option>
+			</select>
+		    </td>
+		</tr>
+		<tr>
+			<td width="25">提交按钮</td>
+			<td><input type="submit"></td>
+			<td>重置按钮</td>
+			<td ><input type="reset"></td>
+		</tr>
+		<tr><td valign="top">文本区域：</td>
+			<td colspan="3"><textarea cols="70" rows="3"></textarea></td>
+		</tr>
+	</table>
+
+</body>
+</html>
