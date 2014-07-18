@@ -1,3 +1,0 @@
-offsetParent根据样式不同 发生变化  获取父节点
-firstChild 类似于childNode 问题  IE6-8
-firstElementChild 除了IE6-8
