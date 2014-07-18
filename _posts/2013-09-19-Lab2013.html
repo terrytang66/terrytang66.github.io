@@ -1,0 +1,39 @@
+---
+   layout: default
+   title: Lab2013
+---
+<style type="text/css">
+body{
+	margin:0 auto;
+}
+#JQuery ul {
+	list-style: none;
+    }
+#JQuery li{
+	padding: 10px 0 0 0;
+	font-size: 22px;
+}
+#JQuery{
+		margin-left:500px;
+		margin-top: 100px;
+	
+	}
+#JQuery a{
+  margin-right:15px;
+  text-decoration: none;
+}
+</style>
+　　<h2>{{ page.title }}</h2>
+　　<section id="JQuery">	
+	<p>在实验室学习看书的时候，所所敲得一些代码，大部分的来源于所观看的书籍。</p>
+	<h2>JQuery学习中的小程序</h2>
+	<ul>
+      <li><a href="eval.html">小计算</a></li>
+      <li><a href="LoginForm.html">注册表单</a></li>
+      <li><a href="Block.html">显示元素</a></li>
+      <li><a href="AddDelete.html">添加删除</a></li>
+      <li><a href="FormSelect.html">表单选择</a></li>
+
+	</ul>
+	</section>
+　　<p>{{ page.date | date_to_string }}</p>
