@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>半透明div</title>
+<!-- arguments可变参  不定参   数组
+css(odiv,'width','200px');设置样式 -->
+<script type="text/javascript">
+// function css () {
+// 	if(arguments.length==2){
+// 		return arguments[0].style[arguments[1]];
+// 	}
+// 	else{
+// 		return arguments[0].style[arguments[1]]=arguments[2];
+// 	}
+
+// }	
+//arguments 数组设置css样式
+// 简化以上arguments代码
+function css(obj,name,value) {
+	if(arguments.length==2){
+		return obj.style[name];
+	}
+	else{
+		 obj.style[name]=value;
+	}
+}
+window.onload=function (){
+	var od=document.getElementById('div1');
+	alert(css(od,'width'));
+	css(od,'width','400px');
+}
+</script>
+<style>
+
+
+</style>
+</head>
+<body>
+<div id="div1"style="width:200px;height:200px;background:black;" ></div>
+</body>
+</html>

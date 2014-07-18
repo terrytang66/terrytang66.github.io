@@ -1,0 +1,31 @@
+<!-- childNodes数组  子节点   IE6-8没问题 但是会包含文本
+children 只包括元素 不包括文本 建议使用
+nodeType 节点类型 3=文本节点  1=元素
+parentNode 查找某一个元素的父节点 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>半透明div</title>
+<script type="text/javascript">
+window.onload=function  () {
+	 var ob=document.getElementsByTagName('a');
+	 var ou=document.getElementById('ul1');
+	 for (var i = 0; i < ob.length; i++) {
+	 	ob[i].onclick=function(){
+	 		ou.removeChild(this.parentNode);
+	 	}
+	 };
+ 
+}
+</script>
+</head>
+<body>
+<ul id="ul1">
+	<li>lisamnjkn<a href="javascript:;">删除</a> </li>
+	<li>lisafffmnjkn<a href="javascript:;">删除</a></li>
+	<li>lgfbnjkn<a href="javascript:;">删除</a></li>
+	<li>lisfjkn<a href="javascript:;">删除</a></li>
+</ul>
+</body>
+</html>

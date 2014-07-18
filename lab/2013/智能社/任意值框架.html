@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<style type="text/css"> 
+#div1 {width: 200px;height: 200px;background:yellow;border:5px solid #ccc;filter:alpha(opacity:30);opacity: 0.3;margin: 20px;float: left;}
+#div2 {width: 200px;height: 200px;background:yellow;margin: 20px;float: left;border:5px solid #ccc;}
+#div3 {width: 200px;height: 200px;background:yellow;font-size:20px;margin: 20px;float: left;border:5px solid #ccc;}
+#div4 {width: 200px;height: 200px;background:yellow;font-size:20px;margin: 20px;float: left;border:5px solid #ccc;}
+#div5 {width: 200px;height: 200px;background:yellow;margin: 20px;float: left;border:5px solid #ccc;}
+
+
+</style>
+<title>半透明div</title>
+<script  href="jsku/getCssStyle.js"></script>
+<script type="text/javascript">
+window.onload=function(){
+    var oD1=document.getElementById('div1');
+    var oD2=document.getElementById('div2');
+    var oD3=document.getElementById('div3');
+    var oD4=document.getElementById('div4');
+    var oD5=document.getElementById('div5');
+
+    oD1.onmouseover=function(){
+        startMove(this,'opacity',100);
+    }
+    oD1.onmouseout=function(){
+        startMove(this,'opacity',30);
+    }
+    oD2.onmouseover=function(){
+        startMove(this,'width',400);
+    }
+    oD2.onmouseout=function(){
+        startMove(this,'width',200);
+    }
+    oD3.onmouseover=function(){
+        startMove(this,'fontSize',40);
+    }
+    oD3.onmouseout=function(){
+        startMove(this,'fontSize',20);
+    }
+      oD4.onmouseover=function(){
+        startMove(this,'borderWidth',40);
+    }
+    oD4.onmouseout=function(){
+        startMove(this,'borderWidth',20);
+    }
+     oD5.onmouseover=function(){
+        startMove(this,'height',400);
+    }
+    oD5.onmouseout=function(){
+        startMove(this,'height',200);
+    }
+
+   
+}
+function getStyle(obj,name){
+    if(obj.currentStyle){
+        return obj.currentStyle[name];
+    }
+    else{
+        return getComputedStyle(obj,false)[name];
+        }
+}
+
+function startMove(obj,attr,iTarget)
+{   var timer=null;
+    clearInterval(obj.timer);
+    obj.timer=setInterval(function(){
+        var cur=0;
+        if (attr =='opacity') {
+            cur=Math.round(parseFloat(getStyle(obj,attr))*100);//四舍五入
+        }else{
+            cur=parseInt(getStyle(obj,attr));
+        }
+
+        var speed=(iTarget-cur)/6;
+        speed=speed>0?Math.ceil(speed):Math.floor(speed);
+        if(iTarget==cur){
+            clearInterval(obj.timer);
+        }
+        else{
+            if (attr =='opacity') {
+                obj.style.filter='alpha(opacity:'+(cur+speed)+')'; 
+                obj.style.opacity=(cur+speed)/100;
+                document.getElementById('txt1').value=obj.style.opacity;
+            }else{
+            obj.style[attr]=cur+speed+'px';}
+        };
+    },30);
+
+}
+
+</script>
+</head>
+<body>
+<input type="text" id="txt1">
+<div id="div1">透明</div>
+<div id="div2">变宽</div>
+<div id="div3">变字</div>
+<div id="div4">border</div>
+<div id="div5">变高</div>
+
+</body> 
+</html>

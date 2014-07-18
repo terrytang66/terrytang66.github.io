@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style type="text/css">
+	</style>
+</head>
+<script type="text/javascript">
+
+// var text="hello this is a high";
+// var pattern=/hello( this is( a high)?)?/gi;
+// var ma=pattern.exec(text);
+// alert(ma.index);
+// alert(ma.input);
+// alert(ma[0]);
+// alert(ma[1]);
+// alert(ma[2]);
+
+
+// var text="this is a short man";
+// var pa=/(..)or(.)/g;
+// if(pa.test(text)){
+// 	alert(RegExp.$1);
+// 	alert(RegExp.$2);
+// 	alert(RegExp.$3);
+// }
+ function call (propertyName) {
+ 	return function(object1,object2){
+ 		var v1=object1[propertyName];
+ 		var v2=object2[propertyName];
+ 		if(v1<v2){
+ 			return -1;
+ 		}
+ 		else if(v1=v2){
+ 			return 0;
+ 		}
+ 		else{
+ 			return 1;
+ 		}
+ 	};
+ }
+ var data=[{name:"Bity",age:25},{name:"Kity",age:15}];
+ data.sort(call("name"));
+ alert(data[0].name);
+ data.sort(call("age"));
+ alert(data[0].age);
+ 
+</script>
+<body>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>半透明div</title>
+<script type="text/javascript">
+window.onload=function  () {
+	var oDiv=document.getElementById('div1');
+	oDiv.onclick=function(){
+		alert('a');
+	}
+	oDiv.setCapture();//IE下可以使用事件捕获
+}
+</script>
+<style>
+</style>
+</head>
+<body>
+<input type="button" value="捕获" id="div1"> 
+</body>
+</html>

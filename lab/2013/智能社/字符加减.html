@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>半透明div</title>
+<script type="text/javascript">
+window.onload=function  () {
+	var o1=document.getElementById('txt1');
+	var o2=document.getElementById('txt2');
+	var bt=document.getElementById('bu');
+	bt.onclick=function(){
+		var n1=parseInt(o1.value);
+		var n2=parseInt(o2.value);//parseFloat()
+		if (isNaN(n1)) {
+			alert("非法字符");
+		}else if(isNaN(n2)){
+			alert("非法字符");
+		}else{
+			alert(n1+n2);
+		}
+
+
+	}
+
+}
+</script>
+<style>
+
+</style>
+</head>
+<body>
+<input id="txt1" type="text">
+<input id="txt2" type="text">
+<input id="bu" type="button" value="add"  >
+</body>
+</html>
