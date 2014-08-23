@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style/001.css">
+	<title>Document</title>
+	<script type="text/javascript">
+	window.onload=function() {
+		var oDiv=document.getElementById('container');
+		var oImg=oDiv.getElementsByTagName('img');
+		for (var i = 0; i < oImg.length; i++) {
+			oImg[i].onclick=function(){
+				for (var i = 0; i < oImg.length; i++) {
+			     oImg[i].src='img/001.0'+i+'.jpg';
+				};
+				
+				this.src='img/0012.0'+i+'.jpg';
+
+			}	
+
+		};
+	}
+	</script>
+</head>
+<body>
+	<div id="main">
+	  <h1>来做个测试？</h1>
+	  <p>这里有三个门。其中，在两个门后面又不好的事情会发生，在一个门后面是可怕的事情，请选择......</p>
+	  <div id="container">
+		   	<img src="img/001.01.jpg" alt="">
+		   	<img src="img/001.02.jpg" alt="">
+		   	<img src="img/001.03.jpg" alt="">
+	  </div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="style/jquery-1.9.1.min.js" type="text/javascript"></script>
+<title>挑战题</title>
+</head>
+<body>
+  <ul>
+      <li>0</li>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+  </ul>  
+  <a href="#">更多</a>
+</body>
+<script>
+   $(function(){
+         
+         $("li:gt(4)").hide();
+         $("li:last").show();
+         $("a").click(function(){
+             
+             var $state=$("a").html();
+             if($state=="更多"){
+                 $("a").html("简化");
+                  $("li:gt(4)").show();
+                 
+                 
+             }
+             
+             if($state=="简化"){
+                 $("a").html("更多");
+                 $("li:gt(4)").hide();
+                 $("li:last").show();
+             }
+             
+         })
+         
+         
+         })
+</script>
+</html>

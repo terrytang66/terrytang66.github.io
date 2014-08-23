@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>color boes show</title>
+    <style type="text/css">
+     html body{
+     	background-color:#101010; 
+     	height: 100%;
+     }
+     #all{
+     	width: 918px;
+     	margin: 0 auto;
+     }
+     .box{
+     	background-color: #444444;
+     	height: 100px;width: 100px;
+     	float: left;
+     	z-index: 1;
+     	position: relative;
+     }
+     .clear{
+     	clear: both;
+     }
+    </style>
+    
+</head>
+<body>
+   <div id="all">
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+	     <div class="box"></div>
+   </div>
+   <script type="text/javascript">
+	// function getElementsByClassName(className,tagName){
+	// 	var ele=[],all=document.getElementsByTagName(tagName||"*");
+	// 		for(var i=0;i<all.length;i++){
+	// 			if(all[i].className.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)')))
+	// 			{
+	// 				ele[ele.length]=all[i];
+	// 			}
+	// 		  }
+	// 	return ele;
+	// }
+	function color(){
+		var colornum = "#"+Math.random().toString(16).slice(2,8);
+		return colornum;
+	}
+	var oMain=document.getElementById('all');
+	var oDiv=oMain.getElementsByTagName('div');
+	for (var i = 0; i < oDiv.length; i++) {
+		oDiv[i].onmouseover=function(){
+			this.style.background=color();
+		}
+	};
+    </script>
+</body>
+</html>

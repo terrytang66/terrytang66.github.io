@@ -1,0 +1,65 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    *{
+    	margin: 0 auto;
+    	margin-top: 50px;
+    	text-align: center;
+    }
+    .button{
+    	width: 100px;height: 50px;
+    }
+    </style> 
+    <script type="text/javascript">
+    // window.onload=function  () {
+    // 	var a=new Array("red","teal","red","blue","maroon","navy","lime","fuschia","green","purple","gray","yellow","aqua","white","silver");
+    // 	var oBtn=document.getElementById('btn');
+    // 	oBtn.onclick=function(){
+    // 		for (var i = 0; i < a.length-1; i++) {
+    // 			document.bgColor=a[i];
+
+    // 		};
+
+    // 	}
+    var Arraycolor=new Array("olive","teal","red","blue","maroon","navy","lime","fuschia","green","purple","gray","yellow","aqua","white","silver");
+	var n=0;
+	function turncolors(){
+		if (n==(Arraycolor.length-1)) n=0;
+		n++;
+		document.bgColor = Arraycolor[n];
+	}
+
+    </script>
+</head>
+<body id="obody">
+<input type="button" value="修改背景颜色" class="button" id="btn" onclick="turncolors()">
+</body>
+</html>
+<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>通过按钮变换背景颜色</title>
+</head>
+<body>
+<script language="javascript">
+var Arraycolor=new Array("olive","teal","red","blue","maroon","navy","lime","fuschia","green","purple","gray","yellow","aqua","white","silver");
+var n=0;
+function turncolors(){
+	if (n==(Arraycolor.length-1)) n=0;
+	n++;
+	document.bgColor = Arraycolor[n];
+}
+</script>
+<form name="form1" method="post" action="">
+  <p>
+    <input type="button" name="Submit" value="变换背景" onclick="turncolors()">
+</p>
+  <p>用按钮随意变换背景颜色.</p>
+</form>
+</body>
+</html> -->

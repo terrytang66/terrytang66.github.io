@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dom</title>
+	<script type="text/javascript" src="style/jquery-1.9.1.min.js">
+	</script>
+	<script type="text/javascript">
+	$(document).ready(function  () {
+		var $nodes=$('#root').children();
+		alert($nodes.length);
+		var txt="";
+		$('#root').children().each(function  () {
+			txt+=$(this).text();
+		});
+		alert(txt);
+	})
+
+	</script>
+</head>
+<body>
+	<div id="root">
+		<div>Hello</div>
+		<div>7568922</div>
+		<div>This</div>
+	</div>
+</body>
+</html>

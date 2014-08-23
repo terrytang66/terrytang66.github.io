@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dom</title>
+	<script type="text/javascript" src="style/jquery-1.9.1.min.js">
+	</script>
+	<script type="text/javascript">
+       $(document).ready(function  () {
+       	 var oL=$("#memlist");
+       	 var Members=['Bity','Terry','Tang','Hellem'];
+       	 $.each(Members,function(index,value){
+       	 	oL.append($("<li>"+value+"</li>"));
+       	 });
+       	 var names=$('li').get();
+       	 $('p').text("Following are the "+names.length+" Members OF my Team");
+       	 // $('p').prepend(Members.join(" <br>"));
+       });
+	</script>
+</head>
+<body>
+		<h3>Member of my Group are</h3>
+		<p></p>
+		<ol id="memlist">
+			
+		</ol>
+</body>
+</html>

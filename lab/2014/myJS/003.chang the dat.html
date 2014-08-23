@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>change the day</title>
+	<style type="text/css">
+
+	#wrapper{
+        min-height: 100%;
+
+	}
+	#main{
+		margin: 0 auto;
+		height: 300px;
+		width:720px;
+	}
+	#container{
+		text-align: center;
+		height: 100px;
+		border: 1px solid #ccc;
+		background-color: #F1C40F;
+    }
+
+	#content{
+		padding: 50px;
+		text-align: center;
+		font-size: 40px;
+		color: #f6f8f8;
+		background-color: #16A085;
+		text-shadow: -3px 3px 0 rgba(0,0,0,0.3);
+		box-shadow: 0 3px 0 rgba(0,0,0,0.3);
+	}
+    #today {
+		height: 300px;
+		background-color: #16A085;
+		box-shadow: -3px 0 0 rgba(0,0,0,0.3);
+	 }
+	 .tab {
+		position: relative;
+		float: left;
+		background-color: #F1C40F;
+		height: 100px;
+		width: 100px;
+	}
+
+	.day {
+		position: absolute;
+		bottom: 10px;
+		left: 10px;
+		font-size: 22px;
+		color: #f39c12;
+	}
+
+	#today {
+		height: 300px;
+		background-color: #16A085;
+		box-shadow:s -3px 0 0 rgba(0,0,0,0.3);
+		
+	}
+	#today .day {
+		font-size: 38px;
+		font-weight: bold;
+		color: #f6f8f8;
+		text-shadow: -3px 3px 0 rgba(0,0,0,0.3);
+	}
+
+
+	</style>
+</head>
+<body>
+<div id="wrapper">
+		<div id="main">
+			<div id="container">
+				    <div class="tab" id="0">
+			          <div class="day">Sun</div>
+			        </div>
+
+			        <div class="tab" id="1">
+			          <div class="day">Mon</div>
+			        </div>
+
+			        <div class="tab" id="2">
+			          <div class="day">Tue</div>
+			        </div>
+
+			        <div class="tab" id="3">
+			          <div class="day" >Wed</div>
+			        </div>
+			     
+			        <div class="tab" id="4">
+			          <div class="day">Thu</div>
+			        </div>
+
+			        <div class="tab" id="5">
+			          <div class="day">Fri</div>
+			        </div>
+
+			        <div class="tab" id="6">
+			          <div class="day">Sat</div>
+			        </div>
+
+			        <div class="clear"></div>
+				</div>
+		</div>
+		<div id="content">
+		</div>
+</div>
+<script type="text/javascript">
+	window.onload=function  () {
+		var d=new Date();
+		var day=d.getDay();
+		var msg=["Sunday Happy","New Week Start!","It is Tuesday","Wednesday Bomm!","Thursday everything is ok","Friday let us eat apple","Satarday ~~~~~"];
+		var oCon=document.getElementById('content');
+		document.getElementById(day).setAttribute('id','today');
+		oCon.innerHTML=msg[day];
+	}
+</script>
+</body>
+</html>

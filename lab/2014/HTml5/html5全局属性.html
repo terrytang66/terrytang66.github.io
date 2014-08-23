@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html5全局属性</title>
+	<script type="text/javascript">
+	    window.document.designMode="off";
+        // designMode页面上所以属性可编辑
+	</script>
+</head>
+<body>
+    <form data-type="comment" class="container">
+    <!-- data-value定义自定义数据属性 -->
+    	<h3>留言板</h3>
+    	<label hidden> 看见了吧</label>
+    	<!-- hidden 隐藏 -->
+    	<p>
+    		<label>
+    			<span>姓名</span>
+    			<input tabindex="1">
+    			<!-- tabindex tab换行顺序 -->
+    		</label>
+    	</p>
+    	<p>
+    		<label>
+    			<span>邮件</span>
+    			<input tabindex="2">
+    		</label>
+    	</p>
+    	<p>
+    		<label>
+    			<span>留言</span>
+    			<textarea tabindex="3" spellcheck="true" cols="60" rows="5"></textarea>
+    			<!-- spellcheck  对输入数据进行语法纠错 -->
+    		</label>
+    	</p>
+    	<table contenteditable="true">
+    		<tr>
+    			<td>数据1</td>
+    		</tr>
+    	</table>
+    	<p contenteditable="true">请留言</p>
+    	<!-- contenteditable 可编辑 -->
+
+    </form>
+</body>
+</html>

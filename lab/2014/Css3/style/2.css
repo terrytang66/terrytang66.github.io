@@ -1,0 +1,19 @@
+a {
+  display: block;
+  padding: 20px;
+  margin: 30px;
+  float: left;
+  text-decoration: none;
+ }
+a[class^=colum]{
+  background:red;
+  color: white;
+}
+a[href$=doc]{
+  background:green;
+  color:white;
+}
+a[title*=box]{
+  background:blue;
+  color: white;
+}

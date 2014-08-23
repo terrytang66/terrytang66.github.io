@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<canvas id="canvas" style = "border:1px solid #aaa;display:block;margin:50px auto;"></canvas>
+	<script type="text/javascript">
+		var tangram = [
+			{p:[{x:0,y:0},{x:800,y:0},{x:400,y:400}],color:"#caff67"},
+			{p:[{x:0,y:0},{x:400,y:400},{x:0,y:800}],color:"#67becf"},
+			{p:[{x:800,y:0},{x:800,y:400},{x:600,y:600},{x:600,y:200}],color:"#ef3d61"},
+			{p:[{x:600,y:200},{x:600,y:600},{x:400,y:400}],color:"#f9f51a"},
+			{p:[{x:400,y:400},{x:600,y:600},{x:400,y:800},{x:200,y:600}],color:"#a594c0"},
+			{p:[{x:200,y:600},{x:400,y:800},{x:0,y:800}],color:"#fa8ecc"},
+			{p:[{x:800,y:400},{x:800,y:800},{x:400,y:800}],color:"#6ca29"}
+		]	//定义每一块的顶点坐标数组
+		window.onload = function(){
+			var canvas = document.getElementById("canvas");
+			canvas.height = 800;
+			canvas.width = 800;
+			
+			var context = canvas.getContext('2d');
+			for(var i =0;i<tangram.length;i++)     //使用for循环进行遍历
+				draw(tangram[i],context)           //draw函数的两个参数变量tangraw和上下文环境context
+		}
+		
+		function draw(piece,cxt){
+			cxt.beginPath();
+			cxt.moveTo(piece.p[0].x,piece.p[0].y);     //移动到顶点坐标的第一个坐标位置
+			for(var i =1;i<piece.p.length;i++)
+				cxt.lineTo(piece.p[i].x,piece.p[i].y);  //绘制后续几个坐标的路径
+				
+			cxt.closePath();
+			cxt.fillStyle = piece.color;
+			cxt.fill();
+		}
+	</script>
+</body>
+</html>

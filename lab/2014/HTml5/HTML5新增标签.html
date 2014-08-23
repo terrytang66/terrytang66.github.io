@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5 新增其他标签</title>
+	<style type="text/css">
+/*	progress {
+    display: inline-block;
+    width: 160px;
+    height: 20px;
+    border: 1px solid #aaa;  
+    background-color:#ccc;
+    color: #aaa; /*IE10*/
+	}
+	/*ie6-ie9*/
+/*	progress ie {
+	    display:block;
+	    height: 100%;
+	    background: #aaa;
+	}
+
+	progress::-moz-progress-bar { background: #aaa; }
+	progress::-webkit-progress-bar { background: #ccc; }
+	progress::-webkit-progress-value  { background: #aaa; }*/
+	</style>
+</head>
+<body>
+	<h3>mark</h3>
+	<p>Don t forget to buy <mark>food</mark> today.</p>
+	<!-- 标注 -->
+	<h3>progress</h3>
+	<progress max="100" value="50">
+		<span>50</span>%
+	</progress>
+	<!-- 进度条 -->
+	<h3>time</h3>
+	<p>发布日期
+	<time datatime="2014-02-05T09:02Z" pubdata>9:00</time>
+	</p>
+	<!-- time给搜索引擎用检测时间   pubdata 上传时间  T时间的分隔符 Z UTC时间格式 -->
+	<h3>ruby</h3>
+	<ruby>
+	    <rt>你好</rt><rp>hao</rp>
+	</ruby>
+    <!-- 注释标签  rp--浏览器不能显示rt时显示 -->
+    <h3>wbr</h3>
+    <p>今天的天气真的太好了，好想出去玩耍啊。今天的天气真的太好了，好想出去玩耍啊。今天的天气真的太好了，好想出去玩耍啊.<wbr></wbr>天的天气真的太好了，好想出去玩耍啊。</p>
+    <!-- 软换行  浏览器宽度不够时换行 -->
+    <h3>canvas</h3>
+    <canvas id="myCanvas"></canvas>
+    <script type="text/javascript">
+        var canvas=document.getElementById('myCanvas');
+        var ctx=canvas.getContext("2d");
+        ctx.fillStyle="#cccccc";
+        ctx.fillRect(0,0,80,100);
+
+    </script>
+    <!-- 图形绘制 -->
+    <h3>command</h3>
+    <menu>	
+    	<command onclick="alert('hello world')" label="click">Click me
+    </menu>
+    <!-- 命令标签  浏览器支持度还不够 -->
+    <h3>details</h3>
+    <details>
+    	<summary>My Book Name</summary>
+    	<ul>
+    		<li>English</li>
+    		<li>Match</li>
+    		<li>Chinese</li>
+    	</ul>
+    </details>
+    <!-- 渲染收缩列表 -->
+    <h3>datalist</h3>
+    <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+         <input id="myCar" list="cars">
+         <datalist id="cars">
+             <option value="BMU"></option>
+             <option value="XXX"></option>
+             <option value="EOR"></option>
+         </datalist>
+    </form>
+    <!-- 输入提示框 -->
+    <h3>kengen</h3>
+    <form action="demo_keygen" method="get">
+	    Username:<label><input type="text"
+	    ></label>
+	    Encryption:<kengen name="security">
+	    <input type="submit">
+    </form>
+    <!-- 加密     -->
+    <h3>output</h3>
+    <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+	    0<input type="range" id="a" value="50">
+	    100+<input type="number" id="b" value="50">
+	    =<output name="x" for="a b">
+	    139</output>
+    </form>
+    <!-- 计算输出 -->
+    <h3>menu</h3>
+    <menu type="toolbar">
+         <li>
+         	<input type="checkbox">11
+         </li>
+          <li>
+         	<input type="checkbox">22
+         </li>
+          <li>
+         	<input type="checkbox">33
+         </li>
+    </menu>
+  <!-- 菜单 有三种类型：菜单列表 工具栏 上下文菜单 -->
+</body>
+</html>

@@ -1,0 +1,12 @@
+body{
+	background: #ccc;
+}
+#main{
+	margin: 0 auto;
+	text-align: center;
+	color: #ffffff;
+}
+
+#container img{
+	padding-left: 10px;
+}

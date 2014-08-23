@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Css3图形制作</title>
+	<style type="text/css">
+	*{
+		margin:0 auto;text-align: center !important; 
+	}
+    .box{
+    	height: 100px;width: 100px;border: 30px solid #999;
+    }
+    .box1{
+    	height: 100px;width: 100px;
+    	border-top: 30px solid #C66;border-bottom: 30px solid #6C6;
+    	border-right: 30px solid #CC6;border-left: 30px solid #66C;
+    }
+    .box2{
+    	width: 0;
+    	border-top: 30px solid #C66;border-bottom: 30px solid #6C6;
+    	border-left: 30px solid #66C;border-right: 30px solid #CC6;
+    }
+    .box3{
+    	width: 0;
+    	border-bottom: 30px solid #6C6;
+    	border-left: 30px solid  transparent;border-right: 30px solid  transparent;
+    }
+    .box4{
+    	width: 0;
+    	border-bottom: 30px solid #6C6;
+    	border-left:53px solid  transparent;border-right:53px solid  transparent;
+    }
+    .box5{
+    	width: 104px;height: 60px;background-color: #6C6;
+    }
+    .box6{
+    	width: 0;border-top: 30px solid #6C6;
+    	border-left:53px solid  transparent;border-right:53px solid  transparent;
+
+    }
+    .box7{
+    	float: left;border-right: 30px solid #6C6;
+    	border-top:53px solid  transparent;border-bottom:53px solid  transparent;
+    }
+    .box8{
+    	float: left;width: 60px;height: 104px;background-color: #6C6;
+    }
+    .box9{
+    	float: left;border-left: 30px solid #6C6;
+    	border-top:53px solid  transparent;border-bottom:53px solid  transparent;
+    }
+    .box10{
+    	width: 30px;
+    	border-bottom: 30px solid #6C6;
+    	border-left: 30px solid transparent;border-right: 30px solid transparent;
+    }
+    .hex{
+    	float: left;margin-left: 3px;margin-bottom: -26px;
+    }
+    .hex .top{
+    	width: 0;	border-bottom: 30px solid #6C6;
+    	border-left: 52px solid transparent;border-right: 52px solid transparent;
+    }
+    .hex .middle{
+    	width: 104px;height: 60px;background-color: #6C6;
+    }
+    .hex .bottom{
+    	width: 0;	border-top: 30px solid #6C6;
+    	border-left: 52px solid transparent;border-right: 52px solid transparent;
+    }
+    .hex-row{
+    	clear: left;
+    }
+    .hex-row .even{
+    	margin-left: 67px;
+    }
+    .hexl{
+    	 float: left;margin-right:-26px;margin-bottom: -50px;
+    	-webkit-transform:perspective(600px) rotateX(60deg);
+    	-moz-transform:perspective(600px) rotateX(60deg);
+    	-ms-transform:perspective(600px) rotateX(60deg);
+    	-o-transform:perspective(600px) rotateX(60deg);
+        transform:perspective(600px) rotateX(60deg);
+        Addendum;
+    }
+    .hexl .left{
+    	width: 0;float: left;	border-right: 30px solid #6C6;
+    	border-top: 52px solid transparent;border-bottom: 52px solid transparent;
+    }
+    .hexl .middle{
+    	width: 60px;float: left;height: 104px; background-color: #6C6;
+    }
+    .hexl .right{
+    	width: 0;float: left;	border-left: 30px solid #6C6;
+    	border-top: 52px solid transparent;border-bottom: 52px solid transparent;
+    }
+    .hexl-row{
+    	clear: left;
+    }
+    .hexl-row .even{
+    	margin-top: 53px;
+    }
+	</style>
+</head>
+<body>
+<div class="box"></div>
+<div class="box1">给每个border附上不同的颜色</div>
+<p>去掉height属性，并把width设置为0</p>
+<div class="box2"></div>
+<p>删除border-top，再将border-left/right设置成透明</p>
+<div class="box3"></div>	
+<p>删除border-top，再将border-left/right设置成透明，宽度52px</p>
+<div class="box4"></div>	
+<div class="box5"></div>
+<div class="box6"></div>
+
+<br>
+<div class="box7"></div>	
+<div class="box8"></div>
+<div class="box9"></div>
+<p>梯形</p>
+<div class="box10"></div>
+
+<br><br>
+<div class="hex">
+	<div class="top"></div>
+	<div class="middle"></div>
+	<div class="bottom"></div>
+</div> 
+<div class="hex">
+	<div class="top"></div>
+	<div class="middle"></div>
+	<div class="bottom"></div>
+</div> 
+<div class="hex hex-row">
+<div class="even">
+	<div class="top"></div>
+	<div class="middle"></div>
+	<div class="bottom"></div>
+</div>
+</div>
+ <div class="hex">
+	<div class="top"></div>
+	<div class="middle"></div>
+	<div class="bottom"></div>
+</div> 
+<br><br><br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+ <div class="hexl">
+	<div class="left"></div>
+	<div class="middle"></div>
+	<div class="right"></div>
+</div> 
+<div class="hexl hexl-row">
+<div class="even">
+	<div class="left"></div>
+	<div class="middle"></div>
+	<div class="right"></div>
+</div>
+</div>
+ <div class="hexl">
+	<div class="left"></div>
+	<div class="middle"></div>
+	<div class="right"></div>
+</div> 
+<div class="hexl hexl-row">
+<div class="even">
+	<div class="left"></div>
+	<div class="middle"></div>
+	<div class="right"></div>
+</div>
+</div>
+ <div class="hexl">
+	<div class="left"></div>
+	<div class="middle"></div>
+	<div class="right"></div>
+</div> 
+</body>
+</html>

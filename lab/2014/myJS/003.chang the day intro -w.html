@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	html,
+body {
+	height: 100%;
+	font-family: Arial, sans-serif;
+	letter-spacing: 2px;
+	color: #333;
+	text-align: center;
+	background-color: #f6f8f8;
+}
+
+#tab_container {
+	width: 700px;
+	margin: 0 auto;
+}
+
+.tab {
+	position: relative;
+	float: left;
+	background-color: #F1C40F;
+	height: 100px;
+	width: 100px;
+}
+
+.day {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	font-size: 22px;
+	color: #f39c12;
+}
+
+#today {
+	height: 300px;
+	background-color: #16A085;
+	box-shadow: -3px 0 0 rgba(0,0,0,0.3);
+	
+}
+
+#today .day {
+	font-size: 38px;
+	font-weight: bold;
+	color: #f6f8f8;
+	text-shadow: -3px 3px 0 rgba(0,0,0,0.3);
+}
+
+.clear {
+	clear: both;
+}
+
+#message{
+	padding: 50px;
+	font-size: 40px;
+	color: #f6f8f8;
+	background-color: #16A085;
+	text-shadow: -3px 3px 0 rgba(0,0,0,0.3);
+	box-shadow: 0 3px 0 rgba(0,0,0,0.3);
+
+}
+
+#wrap {
+	min-height: 100%;
+}
+
+#main {
+	overflow: auto;
+	padding-bottom: 50px;
+	height: 500px;
+}
+		</style>
+	</head>
+<body id="day_tracker">
+
+  <div id="wrap">
+    <div id="main">
+      <div id="tab_container">
+            
+        <div class="tab" id="0">
+          <div class="day">Sun</div>
+        </div>
+
+        <div class="tab" id="1">
+          <div class="day">Mon</div>
+        </div>
+
+        <div class="tab" id="2">
+          <div class="day">Tue</div>
+        </div>
+
+        <div class="tab" id="3">
+          <div class="day" >Wed</div>
+        </div>
+     
+        <div class="tab" id="4">
+          <div class="day">Thu</div>
+        </div>
+
+        <div class="tab" id="5">
+          <div class="day">Fri</div>
+        </div>
+
+        <div class="tab" id="6">
+          <div class="day">Sat</div>
+        </div>
+
+        <div class="clear"></div>
+
+      </div>
+
+      <div id="message">
+      </div>
+    </div>
+  </div>
+<script type="text/javascript">	
+window.onload=function  () {
+		var d=new Date();
+		var day=d.getDay();
+		var msg=["Sunday Happy","New Week Start!","It is Tuesday","Wednesday Bomm!","Thursday everything is ok","Friday let us eat apple","Satarday ~~~~~"];
+		var oCon=document.getElementById('message');
+		document.getElementById(day).setAttribute('id','today');
+		oCon.innerHTML=msg[day];
+	}
+</script>
+	</body>
+	</html>

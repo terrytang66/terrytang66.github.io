@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>可以自定义其获取焦点(focus)时的背景颜色</title>
+    <script src="http://www.imooc.com/data/jquery-1.8.2.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <ul>
+        <li>1111111</li>
+          <li>22222</li>
+            <li>333333</li>
+    </ul>
+    <script type="text/javascript">
+         ; (function ($) {
+        $.extend({
+            "myLiFocus":function(selector,color){
+                $(selector).hover(
+                    function(){
+                        $(this).css("background",color);
+                    },
+                    function(){
+                        $(this).css("background","");
+                    }             
+                )}
+            });
+        })(jQuery);
+        
+        $(function(){
+            $.myLiFocus("li","#ccc");
+        })
+    </script>
+</body>
+</html>
