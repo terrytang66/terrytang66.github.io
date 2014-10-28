@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+    var sortArray=[2,8,3,9,4,2,8,6];
+    var temp;
+    // sortArray=id_list.split(":");
+    for(var i=0;i<sortArray.length;i++)
+    {
+        for(var j=0;j<i;j++)
+        {
+           
+            if(parseInt(sortArray[j])<parseInt(sortArray[i]))
+            {
+                temp=sortArray[j];
+                sortArray[j]=sortArray[i];
+                sortArray[i]=temp;
+            }
+        }
+    }
+    alert(sortArray);
+    
+	</script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>build the house</title>
+	<style type="text/css">
+	*{
+		margin: 0 auto;
+	}
+	#main{
+		height: 500px;width: 1000px;
+		margin: 0 auto;
+		margin-top: 30px;
+	}
+	#allpic{
+		float: left;width: 300px;
+		height: 500px;
+		position: relative;
+	}
+	#allpic .mainpic{
+		width: 145px;
+		height: 40px;
+	}
+	#allpic .tright{
+/*		display: inblock;
+*/		width: 0;
+		position: absolute;
+		top: 10px;left: 30px;
+	    border-top: 30px solid transparent;
+		border-bottom: 30px solid #aC6;
+		border-left: 30px solid transparent;
+		border-right: 30px solid #aC6;
+
+
+	}
+	#allpic .trileft{
+/*		display: block;
+*/		width: 0;
+		position: absolute;
+		top: 10px;left: 150px;
+	    border-top: 30px solid transparent;
+		border-bottom: 30px solid #b56;
+		border-left: 30px solid #b56;
+		border-right: 30px solid transparent;
+
+	}
+	#allpic .triangle{
+/*		display: block;
+*/		width: 0;
+        position: absolute;
+		top:80px;left:20px;
+	    border-top: 30px solid transparent;
+		border-bottom: 30px solid #9ad;
+		border-left: 30px solid transparent;
+		border-right: 30px solid transparent;
+
+	}
+	#allpic .square{
+/*		display: block;
+*/		position: absolute;
+		top:80px;left: 150px;
+		width: 30px;height: 100px;
+	    background-color: #9a9;
+
+	}
+	#allpic .rectup{
+/*		display: block;
+*/		
+		position: absolute;
+		top:200px;left: 150px;
+	    background-color: #9a9;
+		width: 60px;height: 60px;
+	    background-color: #c39;
+
+	}
+	#allpic .rectdown{
+/*		display: block;
+*/		position: absolute;
+		top: 160px;left: 20px;
+		width: 100px;height: 30px;
+	    background-color: #c69;
+
+	}
+	#allpic .halfcir{
+/*		display: block;
+*/		
+		position: absolute;
+		top: 220px;left: 20px;width: 90px;height: 45px;
+	    background-color: #f69;
+	    border-radius: 50px 50px 0 0 ;
+
+	}
+	#allpic .sihalfcl{
+/*		display: block;
+*/		position: absolute;
+		top: 280px;left: 150px;width: 50px;height: 45px;
+	    background-color: #e33;
+	    border-radius: 50px  0 0 0 ;
+
+	}
+	#allpic .sihalfcr{
+/*		display: block;
+*/		
+	    position: absolute;
+		top: 300px;left: 20px;width: 50px;height: 45px;
+	    background-color: #f89;
+	    border-radius: 0  50px 0 0 ;
+
+	}
+	#allpic .pararight{
+/*		display: block;
+*/		
+		position: absolute;
+		top: 340px;left: 150px;width: 90px;height: 45px;
+	    background-color: #e09;
+	    transform:skew(-20deg);
+
+	}
+	#allpic .tuoyuan{
+		position: absolute;
+		top: 360px;left: 20px;
+		width: 90px;height: 45px;
+	    background-color: #e56;
+	    border-radius: 50px;
+	}
+	#block{
+		float: left;width: 690px;
+		height: 350px;
+		text-align: center;
+		font-size: 30px;
+		color: #808080;
+		padding-top: 150px;
+		border: 1px solid #eee;
+		-webkit-box-shadow: 2px  2px #eee;
+	}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<div id="allpic">
+			<div class="tright"></div>
+			<div class="tright"></div>
+			<div class="tright"></div>
+			<div class="tright"></div>
+			<div class="tright"></div>
+			<div class="tright"></div>
+			<div class="trileft"></div>
+			<div class="trileft"></div>
+			<div class="trileft"></div>
+			<div class="trileft"></div>
+			<div class="trileft"></div>
+			<div class="trileft"></div>
+			<div class="triangle"></div>
+			<div class="triangle"></div>
+			<div class="triangle"></div>
+			<div class="triangle"></div>
+			<div class="triangle"></div>
+			<div class="triangle"></div>
+			<div class="triangle"></div>
+			<div class="square"></div>
+			<div class="square"></div>
+			<div class="square"></div>
+			<div class="square"></div>
+			<div class="square"></div>
+			<div class="square"></div>
+			<div class="rectup"></div>
+			<div class="rectup"></div>
+			<div class="rectup"></div>
+			<div class="rectup"></div>
+			<div class="rectup"></div>
+			<div class="rectup"></div>
+			<div class="rectdown"></div>
+			<div class="rectdown"></div>
+			<div class="rectdown"></div>
+			<div class="rectdown"></div>
+			<div class="rectdown"></div>
+			<div class="rectdown"></div>
+			<div class="halfcir"></div>
+			<div class="halfcir"></div>
+			<div class="halfcir"></div>
+			<div class="halfcir"></div>
+			<div class="halfcir"></div>
+			<div class="halfcir"></div>
+			<div class="sihalfcl"></div>
+			<div class="sihalfcl"></div>
+			<div class="sihalfcl"></div>
+			<div class="sihalfcl"></div>
+			<div class="sihalfcl"></div>
+			<div class="sihalfcr"></div>
+			<div class="pararight"></div>
+			<div class="pararight"></div>
+			<div class="pararight"></div>
+			<div class="pararight"></div>
+			<div class="pararight"></div>
+			<div class="pararight"></div>
+			<div class="tuoyuan"></div>
+			<div class="tuoyuan"></div>
+			<div class="tuoyuan"></div>
+			<div class="tuoyuan"></div>
+			<div class="tuoyuan"></div>
+
+		</div>
+		<div id="block">
+		   <p>Building Your Style There!</p>
+		</div>
+	</div>
+	<script type="text/javascript">
+         var oMain=document.getElementById("allpic");  
+         var oAll=oMain.getElementsByTagName("div");
+         for (var i = 0; i < oAll.length; i++) {
+         	 move(oAll[i]);
+         };
+
+        function move(oDivp){
+	        var diaX=0;var diaY=0;
+			oDivp.onmousedown=function  (ev) {
+				var oB=document.getElementById("block");
+				oB.getElementsByTagName("p")[0].style.display="none";
+
+				var oEvent=ev||event;
+				diaX=oEvent.clientX-oDivp.offsetLeft;
+				diaY=oEvent.clientY-oDivp.offsetTop; 
+			    document.onmousemove=function  (ev) {
+				var oEvent=ev||event;
+				var l=oEvent.clientX-diaX;
+				var t=oEvent.clientY-diaY;
+				if (l<0) {
+					l;
+				}else if(l>document.documentElement.clientWidth-oDivp.offsetWidth){
+					l=document.documentElement.clientWidth-oDivp.offsetWidth;
+				}
+				if (t<0) {
+					t;
+				}else if(t>document.documentElement.clientHeight-oDivp.offsetHeight){
+					t=document.documentElement.clientHeight-oDivp.offsetHeight;
+				}
+				oDivp.style.left=l+'px';
+				oDivp.style.top=t+'px';
+
+	   		 }//拖拽
+		    document.onmouseup=function  () {
+			document.onmousemove=null;
+			document.onmouseup=null;
+			}   
+		return false;
+
+	}
+         }
+	</script>
+</body>
+</html>

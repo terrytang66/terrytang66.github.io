@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+    Array.prototype.distinct = function(){
+    var self = this;
+    var _a = this.concat().sort();
+    _a.sort(function(a,b){
+        if(a == b){
+            var n = self.indexOf(a);
+            self.splice(n,1);
+        }
+    });
+    return self;
+};
+var c=[2,8,3,4,2,6,3,4,8,9];
+c.distinct();
+alert(c);
+	</script>
+</body>
+</html>

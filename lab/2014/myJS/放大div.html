@@ -1,0 +1,39 @@
+<!Doctype html>  
+<html>  
+  
+<head>  
+    <meta charset=gb2312>  
+    <title>阿里巴巴面试题</title>  
+    <style>  
+        *{margin:0;padding:0;}  
+        div{background-color:#92c9c9;border:1px solid #00a7f7}  
+        .div1{width:30%;height:200px;float:left;}  
+        .div2{width:68%;height:620px;float:right;}  
+        .div3{float:left;width:30%;height:400px;margin-top:20px;position:absolute;top:200px;left:0;}  
+    </style>  
+    <script>  
+        function scaleObj(obj)  
+        {  
+            obj.style.border = "1px solid #000";  
+            obj.style.backgroundColor = '#9bffff';  
+            obj.style.position = "absolute";  
+            obj.style.zIndex = 1;  
+            obj.style.width = "460px";  
+            obj.style.height = "260px";  
+        }  
+        function restoreSty(obj)  
+        {  
+            obj.style.border = '1px solid #00a7f7';   //为了兼容IE，这里最好不要填空  
+            obj.style.backgroundColor = '';  
+            obj.style.width = '';  
+            obj.style.height = '';  
+        }  
+    </script>  
+</head>  
+<body>  
+    <div class="div1" id="div1" onmouseover="scaleObj(this)" onmouseout="restoreSty(this)"></div>  
+    <div class="div2"></div>  
+    <div class="div3"></div>  
+  
+</body>  
+</html>  

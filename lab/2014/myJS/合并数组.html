@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var ARR1=[1,2,3,4];
+    var ARR2=[3,4,5,6];
+
+    function mergeArray(arr1, arr2) {
+      var _arr = [];
+        for (var i = 0; i < arr1.length; i++) {
+            _arr.push(arr1[i]);
+          }
+          var _dup;
+          for (var i = 0; i < arr2.length; i++){
+           _dup = false;
+            for (var _i = 0; _i < arr1.length; _i++){
+             if (arr2[i] === arr1[_i]){
+              _dup = true;
+              break;
+             }
+          }
+          if (!_dup){
+           _arr.push(arr2[i]);
+          }
+        }
+
+      return _arr;
+    }
+
+  </script>
+</body>
+</html>
+

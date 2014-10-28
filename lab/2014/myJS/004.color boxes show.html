@@ -156,8 +156,15 @@
 	for (var i = 0; i < oDiv.length; i++) {
 		oDiv[i].onmouseover=function(){
 			this.style.background=color();
+			this.style.boxShadow="0 0 4px #fff";
+			this.style.zIndex="1000";
+		}
+		oDiv[i].onmouseout=function(){
+			this.style.boxShadow="none";
+			this.style.zIndex="1";
 		}
 	};
+
     </script>
 </body>
 </html>

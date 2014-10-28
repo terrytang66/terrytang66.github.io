@@ -10,40 +10,55 @@
     	margin-top: 50px;
     }
     .more {
-	text-shadow: 0px 0px 0px rgb(0,0,0);
+	text-shadow: 0px 0px 0px #e33a3d;
+	height: 400px;
     }
+    h1
+		{
+		text-shadow: 5px 70px 100px #FF0000;
+		height: 100px;
+		}
 	</style>
 </head>
 <body>
   <div class="main">
   	<img src="img/004.jpg">
   	<h4>"You will always be lucky if you know how to make friends with strange cats."</h4>
-  	<p class="more"  id="op">-使劲按</p>
+  	<p class="more"  id="op">使劲按</p>
+  <h1>文本阴影效果！</h1>
+
   </div>
   <script type="text/javascript">
-function getByClass(oParent,sClass){
-    var aResult=[];
-	var aEle=oParent.getElementsByTagName('*');
-	for (var i = 0; i < aEle.length; i++) {
-		if(aEle[i].className== sClass){
-			aResult.push(aEle[i]);
-		}
-	};
-	return aResult;
+function getDefaultStyle(obj,attribute){ // 返回最终样式函数，兼容IE和DOM，设置参数：元素对象、样式特性   
+ return obj.currentStyle?obj.currentStyle[attribute]:document.defaultView.getComputedStyle(obj,false)[attribute];   
 }
- window.onload=function(){
-   var oMain=document.getElementById('main');
-   var oP=document.getElementsByTagName('p')[0];
-   oP.oncliclk=function(){
-   	var current=this.getByClass(oMain,"more");
-   	var a = current.split('px');
+window.onload=function(){
+var oMain=document.getElementById('main');
+var oP=document.getElementById('op');
+oP.addEventListener("click",
+function(){
+ var current=getDefaultStyle(oP,"text-shadow"); 
+	var a = current.split('px');
 	var blur = a[a.length-3];
 	var spread = a[a.length-2];
 	var newBlur = parseInt(blur) + 1; 
 	var newSpread = parseInt(spread) + 3; 
-	this.style.boxShadow='rgba(-1, 1, 0, 0.35) 0px 0px ' + newBlur + 'px ' + newSpread + 'px';
-	}
+	this.style.textShadow='1px ' + newBlur + 'px ' + newSpread+'px'+"#e33a3d";
+
+})
 }
+
+ //   var oMain=document.getElementById('main');
+ //   var oP=document.getElementById('op');
+ //    oP.addEventListener("click", function(){
+ // 	var current=this.getByClass(oMain,"more");
+ // 	var a = current.split('px');
+	// var blur = a[a.length-3];
+	// var spread = a[a.length-2];
+	// var newBlur = parseInt(blur) + 1; 
+	// var newSpread = parseInt(spread) + 3; 
+	// this.style.boxShadow='rgba(-1, 1, 0, 0.35) 0px 0px ' + newBlur + 'px ' + newSpread + 'px';
+	// })
   </script>
 </body>
 </html>

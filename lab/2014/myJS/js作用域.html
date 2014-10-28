@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS作用域</title>
+</head>
+<body>
+<script type="text/javascript">
+	var a = 10;
+	sayHi();
+	function sayHi()
+	{
+		var a = a + 10;
+		alert(a);
+		return a;
+	}
+	alert(a);
+	alert(sayHi()+10);
+</script>
+	
+</body>
+</html>

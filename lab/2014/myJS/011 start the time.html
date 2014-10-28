@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>start the time</title>
+	<link rel="stylesheet" type="text/css" href="style/011.css">
+</head>
+<body>
+	<div id="main">
+		<div id="content">
+			<div class="time">
+				<div class="time_top"></div>
+				<div class="time_left1"></div>
+				<div class="time_left2"></div>
+				<div class="time_middle"></div>
+				<div class="time_bottom"></div>
+				<div class="time_right1 "></div>
+				<div class="time_right2"></div>
+			</div>
+			<div class="time">
+				<div class="time_top"></div>
+				<div class="time_left1"></div>
+				<div class="time_left2"></div>
+				<div class="time_middle"></div>
+				<div class="time_bottom"></div>
+				<div class="time_right1"></div>
+				<div class="time_right2"></div>
+			</div>
+			<div class="gehe">
+				<div class="round1"></div>
+				<div class="round2"></div>
+			</div>
+			<div class="time">
+				<div class="time_top"></div>
+				<div class="time_left1"></div>
+				<div class="time_left2"></div>
+				<div class="time_middle"></div>				
+				<div class="time_bottom"></div>
+				<div class="time_right1"></div>
+				<div class="time_right2"></div>
+			</div>
+			<div class="time">
+				<div class="time_top"></div>
+				<div class="time_left1"></div>
+				<div class="time_left2"></div>
+				<div class="time_middle"></div>				
+				<div class="time_bottom"></div>
+				<div class="time_right1"></div>
+				<div class="time_right2"></div>
+			</div>
+			<div class="gehe">
+				<div class="round1"></div>
+				<div class="round2"></div>
+			</div>
+			<div class="time">
+				<div class="time_top"></div>
+				<div class="time_left1"></div>
+				<div class="time_left2"></div>
+				<div class="time_middle"></div>
+				<div class="time_bottom"></div>
+				<div class="time_right1"></div>
+				<div class="time_right2"></div>
+			</div>
+			<div class="time">
+				<div class="time_top"></div>
+				<div class="time_left1"></div>
+				<div class="time_left2"></div>
+				<div class="time_middle"></div>
+				<div class="time_bottom"></div>
+				<div class="time_right1"></div>
+				<div class="time_right2"></div>
+			</div>
+			<div id="footer">
+			<a href="javascript:;">
+				<span class="btn1" id="btn1">Start</span>
+			</a>
+			<a href="javascript:;">
+				<span class="btn2" id="btn2">Stop</span>
+			</a>
+			<a href="javascript:;">
+				<span class="btn3" id="btn3">Reset</span>
+			</a>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+	    var sec=0;
+	    var min=0;
+	    var hour=0;
+	    var running=false;
+	    displayTime();
+    	var oStart=document.getElementById("btn1");
+    	oStart.onclick=function(){
+    		running=true;
+    		countUp();
+    		oStart.style.disabled="true";
+    	}
+    	var oStop=document.getElementById("btn2");
+    	oStop.onclick=function(){
+    		running=false;
+    		oStop.style.disabled="false";
+    	}
+    	var oReset=document.getElementById("btn3");
+    	oReset.onclick=function(){
+    		running=0;
+    		sec=0;
+    		min=0;
+    		hour=0;
+    		oStart.style.disabled="false";
+    		displayTime();
+    	}
+    	function displayTime(){
+    		makeDigitalOnes(sec,"sec_ones");
+    		makeDigitalOnes(min,"min_ones");
+    		makeDigitalOnes(hour,"hour_ones");
+            
+            makeDigitalTens(sec,"sec_tens");
+    		makeDigitalTens(min,"min_tens");
+    		makeDigitalTens(hour,"hour_tens");
+
+    	}
+
+    	function countUp(){
+    		setTimeout(function(){
+    			if (running) {
+    				sec++;
+    				if (sec==60) {
+    					sec=0;
+    					min+=1;
+    				}
+    				if (min==60) {
+    					min=0;
+    					hour+=1;
+    				}
+    				displayTime();
+    				countUp();
+    			};
+    		},1000);
+    	};
+    	function makeDigitalOnes(time,unit){
+    		var ones=time%10;
+    		makeNum(ones);
+    	}
+    	function makeDigitalTens(time,unit){
+    		var tens=Math.floor(time/10);
+    		makeNum(tens);
+    	}
+    	function get(){
+        var e=arguments[0]||window.event;
+        var target=e.srcElement?e.srcElement:e.target;
+        return target;
+     	}
+    	function makeNum(num,unit){
+    		var unit="."+unit;
+    		var oTime=document.getElementsByClassName("time");
+    		for (var i = 0; i < oTime.length; i++) {
+    			var _this=oTime[i].getElementsByTagName("div");
+    			console.log(_this);
+    			if (num==0) {
+                if (_this.className=="middle") {
+                	_this.style.display="none";
+                };
+    		}
+    		};
+    		// console.log(oTime);
+    	}
+	</script>
+</body>
+</html>

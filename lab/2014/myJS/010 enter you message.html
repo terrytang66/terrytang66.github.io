@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>enter your message</title>
+    <style type="text/css">
+   #main{
+     text-align: center;
+     margin: 0 auto;
+     height: 650px;
+     border: 2px solid #eee;
+   }
+   #content{
+   	text-align: left;
+     margin: 0 auto;
+     height: 650px;
+     background-color: #556;
+     border: 2px solid #eee;
+   }
+   #news{
+   	color: #fff;
+    position: absolute;
+    font-size: 28px;
+    top: 300px;
+    left: 60px;
+   }
+   textarea{
+   	height: 300px;
+	width: 400px;
+	padding: 20px;
+	border: 1px solid rgba(0,0,0,0.1);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+   }
+   .button{
+   	margin-top: 30px;
+   	height: 50px;width: 200px;
+   	text-align: center;
+   	background-color: #456;
+   	color: #fff;
+   }
+   .move{
+	transform: translateY(90px);
+	-webkit-animation-name: move;
+	-webkit-animation-duration: 10s;/*整个动画持续的时间*/
+	-webkit-animation-timing-function: ease-in; /*动画运行的方式*/
+	-webkit-animation-delay: .2s; /*延迟时间开始*/
+	-webkit-animation-iteration-count:1;  /*动画运行的次数*/
+   }
+   @-webkit-keyframes move {
+	  0%{
+	    transform: translatex(0px);
+	  }
+	  100%{
+	    transform: translate(0px,-500px);
+	  }
+	 
+	}
+    </style>
+</head>
+<body>
+	<div id="main" style="display:block;">
+		<h3>输入你想写的话：</h3>
+		<textarea></textarea>
+		<br>
+		<input type="submit" class="button" value="点击试一下O(∩_∩)O哈！" id="tijiao">
+	</div>
+	<div id="content" style="display:none;">
+		<div id="news">
+			
+		</div>
+	</div>
+	<script type="text/javascript">
+     var  oMain=document.getElementById("main");
+     var  oCont=document.getElementById("content");
+     var  oNew=document.getElementById("news");
+     var  oBt=document.getElementById("tijiao");
+     oBt.onclick=function  () { 
+     	 var oNews=oMain.childNodes[3].value;
+     	 oMain.style.display="none";
+     	 oCont.style.display="block";
+     	 if (oNews=="") {
+     	 	oNew.innerHTML="请输入一些话语吧~~";
+     	 }else{
+     	 	oNew.innerHTML=oNews;
+     	 	
+     	 }
+
+     	 goUp(oNew);
+     }
+     var timer=null;
+     function goUp(odd){
+     	clearInterval(timer);
+     	timer=setInterval(function(){
+     		var speed=3;
+     		if (odd.offsetTop<0) {
+     			clearInterval(timer);
+     			odd.style.display="none";
+     			window.location=location;
+     		}else{
+     			odd.style.top=odd.offsetTop-speed+"px";
+     		}},30);
+     	}
+     
+	</script>
+</body>
+</html>

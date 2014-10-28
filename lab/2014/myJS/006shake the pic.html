@@ -1,0 +1,303 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>shake the pic</title>
+<style type="text/css">'
+    /* @-weblkit-keyframes shake {
+	0%, 100% {-webkit-transform: -webkit-translateX(0);}
+	5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {-webkit-transform: -webkit-translateX(-20px);}
+	10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {-webkit-transform: -webkit-translateX(20px);}
+	}
+	.shake{
+		  width: 200px;
+		  height: 200px;
+		  border: 1px solid red;
+		  margin: 20px auto;
+		  text-align: center;
+	}
+	 .shake span{
+       display: inline-block;
+	  width: 100px;
+	  height: 100px;
+	  background: orange;
+	  border-radius: 100%;
+	  -webkit-animation-name:shake;
+	  -webkit-animation-duration: 10s;
+	  -webkit-animation-timing-function: ease;
+	  -webkit-animation-delay: 1s;
+	 }*/
+@keyframes around{
+  0%, 100% {transform: translateX(0);}
+    5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {transform: translateX(-20px)}
+	10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {transform: translateX(20px)}
+}
+@-webkit-keyframes shake {
+	0%, 100% {-webkit-transform: translateX(0);}
+	5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {-webkit-transform: translateX(-20px);}
+	10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {-webkit-transform: translateX(20px);}
+}
+
+div span:hover {
+  display: inline-block;
+  width: 20px;s
+  height: 20px;
+  background: orange;
+ -webkit-animation: shake 1s 1;
+	-moz-animation: shake 1s 2;
+	-ms-animation: shake 1s 2;
+	animation: shake 1s 2;
+}
+/*div span :hover {
+	-webkit-animation: shake 1s 2;
+	-moz-animation: shake 1s 2;
+	-ms-animation: shake 1s 2;
+	animation: shake 1s 2;
+}*/
+</style>
+</head>
+<body>
+	<div><span><img src="img/1.jpg"></span></div>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style type="text/css">
+	body {
+	background-color: white;
+}
+
+#wrap {
+	width: 900px;
+	margin: 0 auto;
+	padding-top: 50px;
+	padding-bottom: 50px;	
+}
+
+#container {
+	position: relative;
+	height: 600px;
+	width: 900px;
+}
+#container div{
+	width: 200px;height: 200px;float: left;
+}
+#container img{
+	width: 100px;height: 100px;
+}
+
+.sushi_box {
+	position: absolute;
+	cursor: pointer;
+}
+
+#fancy_roll {
+	bottom: 0;
+	right: 20px;
+}
+
+#seaweed {
+	top: 50px;
+	left: 50px;
+}
+
+#roll1 {
+	top: 60px;
+	left: 720px;
+}
+
+#pinkfish {
+	top: 270px;
+	left: 50px;
+}
+
+#shrimp2 {
+	top: 200px;
+	left: 380px;
+}
+
+#eel2 {
+	top: 50px;
+	left: 350px;
+}
+
+#rolls {
+	top: 320px;
+	left: 380px;
+}
+
+#sake {
+	top: 230px;
+	left: 700px;
+}
+
+#masago {
+	bottom: 10px;
+	left: 50px;
+}
+
+#whitefish {
+	bottom: 10px;
+	left: 350px;
+}
+
+
+
+
+.shake {
+	-webkit-animation: shake 1s 2;
+	-moz-animation: shake 1s 2;
+	-ms-animation: shake 1s 2;
+	animation: shake 1s 2;
+}
+.hop {
+	-webkit-animation: hop 2s;
+	-moz-animation: hop 2s;
+	-ms-animation: hop 2s;
+	animation: hop 2s;
+}
+.spin {
+	-webkit-animation: spin 2s;
+	-moz-animation: spin 2s;
+	-ms-animation: spin 2s;
+	animation: spin 2s;
+}
+.grow {
+	z-index: 30;
+	-webkit-animation: grow 2s;
+	-moz-animation: grow 2s;
+	-ms-animation: grow 2s;
+	animation: grow 2s;
+}
+.hooray {
+	z-index: 20;
+	-webkit-animation: hooray 2s;
+	-moz-animation: hooray 2s;
+	-ms-animation: hooray 2s;
+	animation: hooray 2s;
+}
+.hello{
+	-webkit-animation:hello 2s;
+	-moz-animation: hello 2s;
+	-ms-animation: hello 2s;
+	animation: hello 2s;
+}
+
+/* Webkit Animations */
+
+@-webkit-keyframes shake {
+	0%, 100% {-webkit-transform: translateX(0);}
+	5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {-webkit-transform: translateX(-20px);}
+	10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {-webkit-transform: translateX(20px);}
+}
+
+@-webkit-keyframes hop {
+	0% {-webkit-transform: translateX(0);}
+	12% {-webkit-transform: translateY(-100px) rotate(-20deg);}
+	25% {-webkit-transform: translateX(-20px);}
+	37% {-webkit-transform: translateY(-100px) rotate(20deg);}
+	50% {-webkit-transform: translateX(20px);}
+	62% {-webkit-transform: translateY(-100px) rotate(-20deg);}
+	75% {-webkit-transform: translateX(-20px);}
+	87% {-webkit-transform: translateY(-100px) rotate(20deg);}
+	100% {-webkit-transform: translateX(0);}
+}
+
+@-webkit-keyframes spin {
+	0% {-webkit-transform: rotate(0deg)}
+	8% {-webkit-transform: rotate(-50deg)}
+	35% {-webkit-transform: rotate(-50deg) }
+	100% {-webkit-transform: rotate(3600deg)}
+}
+
+@-webkit-keyframes grow {
+	0% { -webkit-transform: scale(1); }
+	75% { -webkit-transform: scale(2.5); }
+	90% { -webkit-transform: scale(0.6); }
+	93% { -webkit-transform: scale(1.4); }
+	95% { -webkit-transform: scale(0.8); }
+	97% { -webkit-transform: scale(1.2); }
+	100% { -webkit-transform: scale(1); }
+}
+
+@-webkit-keyframes hooray {
+	0% {-webkit-transform: translateX(0) translateY(0) scale(1, 1);}
+	10% {-webkit-transform: translateX(60px) translateY(-60px) scale(1.5, 1.5);}
+	20% {-webkit-transform: translateX(0) translateY(0) scale(.7, .7);}
+	30% {-webkit-transform: translateX(-60px) translateY(-60px) scale(1.5, 1.5);}
+	40% {-webkit-transform: translateX(0) translateY(0) scale(.7, .7);}
+	50% {-webkit-transform: translateX(60px) translateY(-60px) scale(1.5, 1.5);}
+	60% {-webkit-transform: translateX(0) translateY(0) scale(.7, .7);}
+	70% {-webkit-transform: translateX(-60px) translateY(-60px) scale(1.5, 1.5);}	
+	80% {-webkit-transform: translateX(0) translateY(0) scale(.7, .7);}
+	90% {-webkit-transform: translateX(60px) translateY(-60px) scale(1.5, 1.5);}
+	100% {-webkit-transform: translateX(0) translateY(0) scale(1, 1);}
+}
+@-webkit-keyframes hello{
+	0%{-webkit-transform:scale(1,1) translateX(0) translateY(0);}
+	20%{-webkit-transform:scale(1.5,1.5);}
+	30%{-webkit-transform: translateX(0px) translateY(-50px) scale(1,1);}
+	60%{-webkit-transform:translateX(50px) translateY(-50px)};
+    80%{-webkit-transform:translateX(0px) translateY(50px)};
+    100%{-webkit-transform:translateX(0px) translateY(0px) scale(2,2);}
+
+}
+
+</style>
+<body id="sushi_jiggler">
+	<div id="wrap">
+		<div id="container">
+			<div ><img src="img/1.jpg"></div>
+			<div id="roll1"><img src="img/2.jpg"></div>
+			<div id="sake"><img src="img/4.jpg"></div>
+			<div id="fancy_roll"><img src="img/5.jpg"></div>
+			<div id="eel2"><img src="img/6.jpg"></div>
+			<div id="masago"><img src="img/1.jpg"></div>
+			<div id="shrimp2"><img src="img/4.jpg"></div>
+			<div id="rolls"><img src="img/2.jpg"></div>
+			<div id="pinkfish"><img src="img/3.jpg"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function addclass(elm,newclass){
+		  var c = elm.className;
+		  if(c!=""){
+		  elm.className=newclass;
+		}
+	}
+	// function getNpm(min,max){
+	// 	return Math.floor(Math.random()*(max-min+1))+min;
+	// }返回一个随机数0——5
+        // window.onload=function(){
+        	var oL=document.getElementById('sushi_jiggler');
+        	var oW=document.getElementById('wrap');
+        	var oC=document.getElementById('container');
+        	var newa=['shake','hop','spin','grow','hooray','hello'];
+        	var oDiv=oC.getElementsByTagName('div');
+        	for(var i=0;i<oDiv.length;i++){
+        		oDiv[i].onclick=function(){
+        			var o=parseInt(Math.random()*6);
+        			// var o=getNpm(0,4);
+        			this.className=newa[o];
+        		}
+        	    this.className="";
+            }  
+         // function mode(){   
+         //     var mod2e=oDiv.addEventListener("click", function(){
+         //     	var o=parseInt(Math.random()*6);
+        	// 		// var o=getNpm(0,4);
+        	// 	this.className=newa[o];
+         //     })
+         //     }   
+         //    mode();  	
+		// }
+	</script>
+
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组合并</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// var a=[0,1,2,3,4,5,8,9];
+		// var b==[6,7,10,12,15,16];
+		// var al=a.length;
+		// var bl=b.length;
+		// for (var i = 0; i < al; i++) {
+		// 	for (var i = 0; i < bl; i++) {
+		// 		if (a[i]<b[i]) {
+
+		// 		};
+		// 	};
+		// };
+		var a1 = [1,2,3,4,5],
+        a2 = [-1,0,1,2,3,4,4,5,6],
+        a3 = [],
+        l1 = a1.length,
+        l2 = a2.length,
+        l3 = l1 + l2,
+        i1,i2,i3;
+
+		for(i1=i2=i3=0;i3 < l3; i3++)
+		{        
+		        if(i2 == l2 || a1[i1] < a2[i2])
+		        {
+		                a3[i3] = a1[i1];
+		                i1 ++;
+		        }
+		        else
+		        {
+		                a3[i3] = a2[i2];
+		                i2 ++;
+		        }
+		}
+		alert(a3);
+	</script>
+</body>
+</html>
