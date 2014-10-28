@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  body {
+    background-color: black;
+  }
+  .plane {
+    cursor: pointer;
+    width: 212px;
+    height: 212px;
+    background-color: rgba(255,255,255,0.1);
+    position: relative;
+    margin: 300px auto;
+    overflow: hidden;
+  }
+  .plane .main {
+    width: 200px;
+    height: 200px;
+    margin: 6px 0 0 6px;
+    background-color: white;
+  }
+  .plane .v1 {
+    position: absolute;
+    -moz-transition:all 1s 0s linear;
+    -webkit-transition:all 1s 0s linear;
+    transition:all 1s 0s linear;
+  }
+  .plane .v2 {
+    position: absolute;
+    -moz-transition:all 1s 0s linear;
+    -webkit-transition:all 1s 0s linear;
+    transition:all 1s 0s linear;
+  }
+  .plane:hover .t1 {
+    left: 0%;
+  }
+  .plane:hover .t2 {
+    left: 100%;
+  }
+  .plane:hover .r1 {
+    top: 0;
+  }
+  .plane:hover .r2 {
+    top: 100%;
+  }
+  .plane:hover .b1 {
+    left: 0;
+  }
+  .plane:hover .b2 {
+    left: -100%;
+  }
+  .plane:hover .l1 {
+    top: 0;
+  }
+  .plane:hover .l2 {
+    top: -100%;
+  }
+  .plane .t1 {
+    display: block;
+    width: 100%;
+    height: 2px;
+    left: -100%;
+    top: 0;
+    background-color: #E57504;
+    z-index: 40;
+  }
+  .plane .t2 {
+    display: block;
+    width: 100%;
+    height: 2px;
+    left: -100%;
+    top: 4px;
+    background-color: #B8E504;
+  }
+  .plane .r1 {
+    display: block;
+    width: 2px;
+    height: 100%;
+    right: 0;
+    top: -100%;
+    background-color: #04E535;
+    z-index: 30;
+  }
+  .plane .r2 {
+    display: block;
+    width: 2px;
+    height: 100%;
+    right: 4px;
+    top: -100%;
+    background-color: #04C7E5;
+  }
+  .plane .b1 {
+    display: block;
+    width: 100%;
+    height: 2px;
+    left: 100%;
+    bottom: 0;
+    background-color: #0804E5;
+    z-index: 20;
+  }
+  .plane .b2 {
+    display: block;
+    width: 100%;
+    height: 2px;
+    left: 100%;
+    bottom: 4px;
+    background-color: #A504E5;
+  }
+  .plane .l1 {
+    display: block;
+    width: 2px;
+    height: 100%;
+    left: 0;
+    top:100%;
+    background-color: #E504B4;
+    z-index: 10;
+  }
+  .plane .l2 {
+    display: block;
+    width: 2px;
+    height: 100%;
+    left: 4px;
+    top:100%;
+    background-color: #E50413;
+  }
+  /*纯白色*/
+  /*
+  .plane .t1 {
+    display: block;
+    width: 100%;
+    height: 2px;
+    left: -100%;
+    top: 0;
+    background-color: white;
+  }
+  .plane .t2 {
+    display: block;
+    width: 100%;
+    height: 2px;
+    left: -100%;
+    top: 4px;
+    background-color: white;
+  }
+  .plane .r1 {
+    display: block;
+    width: 2px;
+    height: 100%;
+    right: 0;
+    top: -100%;
+    background-color: white;
+  }
+  .plane .r2 {
+    display: block;
+    width: 2px;
+    height: 100%;
+    right: 4px;
+    top: -100%;
+    background-color: white;
+  }
+  .plane .b1 {
+    display: block;
+    width: 100%;
+    height: 2px;
+    left: 100%;
+    bottom: 0;
+    background-color: white;
+  }
+  .plane .b2 {
+    display: block;
+    width: 100%;
+    height: 2px;
+    left: 100%;
+    bottom: 4px;
+    background-color: white;
+  }
+  .plane .l1 {
+    display: block;
+    width: 2px;
+    height: 100%;
+    left: 0;
+    top:100%;
+    background-color: white;
+  }
+  .plane .l2 {
+    display: block;
+    width: 2px;
+    height: 100%;
+    left: 4px;
+    top:100%;
+    background-color: white;
+  }
+  */
+  </style>
+</head>
+<body>
+  <div class="plane" id="plane">
+    <div class="main">
+      main
+    </div>
+    <span class="t1 v1"></span>
+    <span class="r1 v1"></span>
+    <span class="b1 v1"></span>
+    <span class="l1 v1"></span>
+    <span class="t2 v2"></span>
+    <span class="r2 v2"></span>
+    <span class="b2 v2"></span>
+    <span class="l2 v2"></span>
+  </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>宽高固定的容器如何在浏览器中水平垂直居中</title>
+</head>
+<style>
+
+html,body { margin:0; padding:0; height:100%; font:12px/180% "宋体"; text-align:center;}
+#main {
+ width:200px;
+ height:20px;
+ background-color:#ddd;
+ position:relative;
+ top:50%;
+ margin:-10px auto 0 auto;    
+ /*   margin-top=-(height/2);   */
+}
+</style>
+<body>
+<div id="main">
+  传说中的水平及垂直居中
+</div>
+</body>
+</html>

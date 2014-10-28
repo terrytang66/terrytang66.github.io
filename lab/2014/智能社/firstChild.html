@@ -1,0 +1,34 @@
+<!-- offsetParent根据样式不同 发生变化  获取父节点
+firstChild 类似于childNode 问题  IE6-8
+firstElementChild 除了IE6-8
+ -->
+ <!-- childNodes数组  子节点   IE6-8没问题 但是会包含文本
+children 只包括元素 不包括文本 建议使用
+nodeType 节点类型 3=文本节点  1=元素
+parentNode 查找某一个元素的父节点 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>半透明div</title>
+<script type="text/javascript">
+	window.onload=function  () {
+		var ol=document.getElementById('uli');
+		if(ol.firstElementChild){
+			ol.firstElementChild.style.background='red';
+		}else{
+			ol.firstChild.style.background='red';
+		}
+		};//解决兼容性
+</script>
+</head>
+<body>
+<ul id="uli">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+</body>
+</html>

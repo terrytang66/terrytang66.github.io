@@ -1,0 +1,97 @@
+一个感叹号（当然是英文符号），然后摁下 TAB 键
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+</body>
+</html>
+
+html:xt  加Tab 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+
+html:5 或者 ! 生成 HTML5 结构
+html:xt 生成 HTML4 过渡型
+html:4s 生成 HTML4 严格型
+大于号表示后面要生成的内容是当前标签的后代。例如我要生成一个无序列表，而且被 class 为 aaa 的 div 包裹
+div.aaa>ul>li
+<div>
+    <ul>
+        <li></li>
+    </ul>
+</div>
+生成平级的元素，就需要使用 + 号
+生成上级元素：^
+div>ul>li^span
+<div>
+    <ul>
+        <li></li>
+    </ul>
+    <span></span>
+</div>
+
+用括号进行分组，这样可以更加明确要生成的结构，特别是层次关系，例如：
+div>(header>ul>li*2>a)+footer>p
+这样很明显就可以看出层次关系和并列关系，生成如下结构：
+<div>
+    <header>
+        <ul>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+        </ul>
+    </header>
+    <footer>
+        <p></p>
+    </footer>
+</div>
+
+
+ul>li.item$*5
+<ul>
+ <li class="item1"></li>
+ <li class="item2"></li>
+ <li class="item3"></li>
+ <li class="item4"></li>
+ <li class="item5"></li>
+</ul>
+
+$ 就表示一位数字，只出现一个的话，就从1开始。如果出现多个，就从0开始。如果我想生成三位数的序号，那么要写三个 $：
+ul>li.item$$$*5
+输出：
+<ul>
+    <li class="item001"></li>
+    <li class="item002"></li>
+    <li class="item003"></li>
+    <li class="item004"></li>
+    <li class="item005"></li>
+</ul>
+
+ul>li.item$@-*5
+生成如下结构：
+<ul>
+    <li class="item5"></li>
+    <li class="item4"></li>
+    <li class="item3"></li>
+    <li class="item2"></li>
+    <li class="item1"></li>
+</ul>
+
+
+
+
+<!-- a{click}+b{here} -->
+<a href="">click</a><b>here</b>
+
+<!-- a>{click}+b{here} -->
+<a href="">click<b>here</b></a>

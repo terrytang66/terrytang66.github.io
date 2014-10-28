@@ -17,7 +17,7 @@
                  /*箭头向下*/
                 .arrow-down {
                         width:0; 
-                        height:0; 
+                        height:0;  
                         border-left:30px solid transparent;
                         border-right:30px solid transparent;
                         border-top:30px solid #000;
@@ -41,32 +41,20 @@
                         border-left: 30px solid #000;
                 }
                 
-                #box{ width:300px; height:300px; background:#838383; position:relative;}
-                #box:after{
-                        position:absolute;
+                .box{ width:300px; height:300px; background:#838383; position:relative;}
+                .box:after{
+                    position:absolute;
                         right:-20px;
                         top:10px;
-                        display:block;
+                    display:block;
                         content:"";
-                        width:0; 
+                    width:0; 
                         height:0; 
                         border-top:20px solid transparent;
                         border-bottom: 20px solid transparent;
                         border-left: 20px solid #838383;
                 }
-                #main{
-                    position: relative;height: 200px;width: 200px;
-                    background-color: #e33a3d;
-                }
-                #main:after{
-                    position: absolute;display: block;
-                    top: 10px;right: -20px;
-                    width: 0;height: 0;
-                   content:'';
-                    border-top:20px solid transparent;
-                    border-bottom: 20px solid transparent;
-                     border-left: 20px solid #e33a3d;
-                }
+                
         </style>
 </head>
 <body>
@@ -84,16 +72,10 @@
                 <!--向右的三角-->
         </div>
         
-        <div id="box">
-                :after 伪元素在元素之后添加内容实现小三角
+        <div class="box">
+                 :after 伪元素在元素之后添加内容实现小三角
         </div>
-        <div id="main">
-             :after 伪元素在元素之后添加内容实现小三角 :after 伪元素在元素之后添加内容实现小三角 :after 伪元素在元素之后添加内容实现小三角 :after 伪元素在元素之后添加内容实现小三角 :after 伪元素在元素之后添加内容实现小三角 :after 伪元素在元素之后添加内容实现小三角 :after 伪元素在元素之后添加内容实现小三角 :after 伪元素在元素之后添加内容实现小三角 :after 伪元素在元素之后添加内容实现小三角 :after 伪元素在元素之后添加内容实现小三角 :after 伪元素在元素之后添加内容实现小三角 :after 伪元素在元素之后添加内容实现小三角 :after 伪元素在元素之后添加内容实现小三角 :after 伪元素在元素之后添加内容实现小三角 :after 伪元素在元素之后添加内容实现小三角
-        </div>
-        <script type="text/javascript">
-        var str = "abcsdfkjfsdhfksdjfksd";
-        document.write(str.length);
-        document.write("<br />"+str.substring(0,10)+"...");
-        </script>
+        
+        
 </body>
 </html>

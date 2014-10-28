@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>半透明div</title>
+<style type="text/css">
+#div1{width:200px;height:200px;background:black;}
+</style>
+<script type="text/javascript">
+// style(行间样式) 获取非行间样式 
+function getStyle(obj,name){
+	if(obj.currentStyle){
+		return obj.currentStyle[name];
+	}
+	else{
+		return getComputedStyle(obj,false)[name];
+	    }
+}
+window.onload=function  () {
+	var od=document.getElementById('div1');
+	// alert(od.currentStyle.width);// 只在IE中 获取非行间style
+	//alert(getComputedStyle(od,null).width);//null 为空 实用范围较广 IE下不支持
+	// if (od.currentStyle) {
+	// 	alert(od.currentStyle.width);
+	// }else
+	// {
+	//     alert(getComputedStyle(od,null).width);
+
+	// }
+	alert(getStyle(od,'background'));
+}
+</script>
+
+</head>
+<body>
+<!-- <div id="div1"style="width:200px;height:200px;background:black;" ></div> -->
+<div id="div1"></div>
+</body>
+</html>

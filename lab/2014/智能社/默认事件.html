@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>半透明div</title>
+<script type="text/javascript">
+document.oncontextmenu=function  (ev) {
+	var oEvent=ev||event;
+	var oDiv=document.getElementById('div1');
+	oDiv.style.display='block';
+	oDiv.style.left=oEvent.clientX+'px';
+	oDiv.style.top=oEvent.clientY+'px';
+	return false;
+	
+};
+document.onclick=function  () {
+	var oDiv=document.getElementById('div1');
+	oDiv.style.display='none';
+}
+
+</script>
+<style>
+*{margin: 0 ;padding: 0;list-style: none;}
+#div1{display: none;background: red;height: 200px;width: 200px;position: absolute;}
+</style>
+</head>
+<body>
+<div id="div1">
+<ul>
+<li>aaaa</li>
+<li>bbb</li>
+<li>ccc</li>
+</ul>
+</div>
+</body>
+</html>

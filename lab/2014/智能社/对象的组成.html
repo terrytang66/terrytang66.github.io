@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象的组成</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var a=12;  //变量，自由的，不属于任何人
+		alert(a);
+
+		var arr=[1,2.3,4,5];
+		arr.a=12;  //属性，属于一个对象
+
+
+		function aa(){  //函数：自由的
+			alert('aaa');
+		}
+		var arr1=[1,2,3];
+		arr1.aa=function(){ //方法：属于一个对象
+			alert('aaa');
+		}
+	</script>
+</body>
+</html>

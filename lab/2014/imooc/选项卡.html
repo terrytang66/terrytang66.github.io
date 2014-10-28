@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>实践题 - 选项卡</title>
+    <style type="text/css">
+     /* CSS样式制作 */  
+       *{padding:0px;margin: 0px;font:12px normal "microsoft yahei";}
+        #tabs {width:240px;padding:5px;height:150px;margin:20px;}
+        #tabs ul{list-style:none;display: block;height:30px;line-height:30px;border-bottom:2px #C41919 solid;}
+        #tabs ul li{background:#ccc;cursor:pointer;float:left;list-style:none;height:28px;line-height:28px;margin:0px 3px;border:1px solid #aaaaaa;border-bottom:none;display:inline-block;width:60px;text-align: center;}
+        #tabs ul li.on{background:#fff;border-top:2px solid #C41919;border-bottom: 2px solid #fff;}
+        #tabs div{background:#98C5F2;height:120px;line-height: 25px;border:2px solid #fff;border-top:none;padding:5px;}
+        .hide{display: none;}
+    </style>
+    <script type="text/javascript">
+    window.onload=function(){
+        var oDiv=document.getElementById('tabs');
+        var oUl=oDiv.getElementsByTagName('ul')[0];
+        var oLi=oUl.getElementsByTagName('li');
+        var oDivs=oDiv.getElementsByTagName('div');
+        for(var i=0;i<oLi.length;i++){
+            oLi[i].index=i;
+            oLi[i].onclick=function(){
+                for(var j=0;j<oLi.length;j++){
+                    oLi[j].className="";
+                    oDivs[j].className="hide";
+                    
+                }
+            this.className="on";
+           oDivs[this.index].className="";
+            }
+        }
+    }
+    
+    
+    </script>
+ 
+</head>
+<body>
+<!-- HTML页面布局 -->
+   <div id="tabs">
+            <ul>
+                <li class="on">房产</li>
+                <li>家居</li>
+                <li>二手房</li>
+            </ul>
+            
+        <div>
+           
+               275万购昌平邻铁三居 总价20万买一居<br>
+                200万内购五环三居 140万安家东三环<br>
+                北京首现零首付楼盘 53万购东5环50平<br>
+               京楼盘直降5000 中信府 公园楼王现房<br>
+         
+        </div>
+        <div class="hide">
+                240平出租屋大改造 美少女的混搭小窝<br>
+               200万内购五环三居 140万安家东三环<br>
+                北京首现零首付楼盘 53万购东5环50平<br>
+                京楼盘直降5000 中信府 公园楼王现房<br>
+         
+        </div>
+        <div  class="hide">
+            通州豪华3居260万 二环稀缺2居250w甩<br>
+                200万内购五环三居 140万安家东三环<br>
+               北京首现零首付楼盘 53万购东5环50平<br>
+               京楼盘直降5000 中信府 公园楼王现房<br>
+         
+        </div>
+    </div>
+</body>
+</html>

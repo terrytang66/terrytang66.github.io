@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>半透明div</title>
+<script type="text/javascript">
+window.onload=function  () {
+	var od=document.getElementById('div1');
+	var ob=od.getElementsByTagName('input');
+	var odd=od.getElementsByTagName('div');
+for (var i = 0; i < ob.length; i++) {
+	ob[i].index=i;//通过JS加入index
+	ob[i].onclick=function(){
+	   for (var i = 0; i < ob.length; i++) {
+			ob[i].className='';
+			odd[i].style.display='none';
+		};//去掉本来的样式
+		this.className='active';
+		odd[this.index].style.display='block';//当前 发生事件的元素
+	}
+
+};
+}
+</script>
+<style>
+#div1 .active{background:yellow;}
+#div1 div{width: 200px;height: 200px;background:#999;border: 1px solid #ccc;display: none;}
+</style>
+</head>
+<body>
+<div id="div1">
+<input type="button" value="教育" class="active" >
+<input type="button" value="培训">
+<input type="button" value="招生">
+<input type="button" value="出国">
+<div style="display:block;">11</div>
+<div>22</div>
+<div>33</div>
+<div>44</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖拽的继承</title>
+	<style type="text/css">
+   #div1{
+   	height: 200px;width: 200px;
+   	background-color: yellow;
+   	position: absolute;
+   }
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+	window.onload=function(){
+		var oDiv = document.getElementById('div1');
+		oDiv.onmousedown=function(ev){
+			var oEvent=ev||event;
+			var disx=oEvent.clientX-oDiv.offsetLeft;
+			var disy=oEvent.clientY-oDiv.offsetTop;
+
+			document.onmousemove=function(ev){
+				var oEvent=ev||event;
+				oDiv.style.left=oEvent.clientX-disx+'px';
+				oDiv.style.top=oEvent.clientY-disy+'px';
+			}
+			document.onmouseup=function(){
+				document.onmousemove=null;
+				document.onmouseup=null;
+			}
+		}
+	}
+	</script>
+
+	<div class="" id="div1"></div>
+</body>
+</html>

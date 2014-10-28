@@ -1,0 +1,175 @@
+<!DOCTYPE　html>
+<html>
+<head>
+<meta charset="utf-8">
+<style type="text/css">
+body{background: #666;} ul{padding: 0;margin: 0;}li{list-style: none;}img{border: 0;}
+
+.play{width: 400px;height: 430px;margin: 50px auto 0;background: #999;font: 12px Arial;}
+.big_pic{width: 400px;height: 230px;overflow: hidden;border-bottom: 1px solid #ccc;background: #222;position: relative;}
+.big_pic li{width: 400px;height: 320px;overflow: hidden;position: absolute;top: 0;left: 0;z-index: 0;background: url(images/) no-repeat center center;}
+.mark_left{width: 200px;height: 320px;position: absolute;left: 0;top: 0;background: red;filter:alpha(opacity:0);opacity: 0;z-index: 3000;}
+.mark_right{width: 200px;height: 320px;position: absolute;left: 200px;top: 0;background:green;filter:alpha(opacity:0);opacity: 0;z-index: 3000;}
+.big_pic .prev{width: 60px;height: 60px;background: url(images/left.jpg) no-repeat;position: absolute;top: 130px;left: 10px;z-index: 3001;filter:alpha(opacity:0);opacity:0;cursor: pointer;}
+.big_pic .next{width: 60px;height: 60px;background: url(images/right.jpg) no-repeat;position: absolute;top: 130px;right: 10px;z-index: 3001;filter:alpha(opacity:0);opacity:0;cursor: pointer;}
+
+
+.big_pic .text{position: absolute;left: 10px;top: 302px;z-index: 3000;color: #ccc;}
+.big_pic .length{position: absolute;right: 10px;bottom: 4px;z-index: 3000;color: #ccc;}
+.big_pic .bg{width: 400px;height: 25px;background: #000;filter:alpha(opacity=60);opacity: 0.6;position: absolute;z-index: 2999;bottom: 0;left: 0;}
+.small_pic{width:380px;height: 94px;position: relative;top: 7px;left: 10px;overflow: hidden;border: 1px solid #ccc;}
+.small_pic ul{height: 94px;position: absolute;top: 0;left: 0;}
+.small_pic li{width: 120px;height: 94px;float: left;padding-right: 10px;background: url(images/);cursor: pointer;filter:alpha(opacity=60);opacity: 0.6;}
+.small_pic img{width: 120px;height: 94px;}
+
+
+
+</style>
+<script src="jsku/move.js"></script>
+<script type="text/javascript">
+function getByClass (oParent,sClass) {
+	var aEle=oParent.getElementsByTagName('*');
+	var aResult=[];
+	for (var i = 0; i < aEle.length; i++) {
+		if(aEle[i].className==sClass){
+			aResult.push(aEle[i]);
+
+		}
+	};return aResult;
+}
+window.onload=function  () {
+	var oDiv=document.getElementById('palyimages');
+	var oBtnPrev=getByClass(oDiv,'prev')[0];
+	var oBtnNext=getByClass(oDiv,'next')[0];
+	var oMarkLeft=getByClass(oDiv,'mark_left')[0];
+	var oMarkRight=getByClass(oDiv,'mark_right')[0];
+	//控制两个箭头左右
+	oBtnPrev.onmouseover=oMarkLeft.onmouseover=function  () {
+		startMove(oBtnPrev,'opacity',100);
+	}
+	oBtnPrev.onmouseout=oMarkLeft.onmouseout=function  () {
+		startMove(oBtnPrev,'opacity',0);
+	}
+	oBtnNext.onmouseover=oMarkRight.onmouseover=function  () {
+		startMove(oBtnNext,'opacity',100);
+	}
+	oBtnNext.onmouseout=oMarkRight.onmouseout=function  () {
+		startMove(oBtnNext,'opacity',0);
+	}
+
+	//大图切换
+	var oDivSmall=getByClass(oDiv,'small_pic')[0];
+	var oUlSmall=oDivSmall.getElementsByTagName('ul')[0];
+	var aLiSamll=oDivSmall.getElementsByTagName('li');
+	var oUlBig=getByClass(oDiv,'big_pic')[0];
+	var aLiBig=oUlBig.getElementsByTagName('li');
+	var nowIndex=2;
+	var now=0;
+	oUlSmall.style.width=aLiSamll.length*aLiSamll[0].offsetWidth+'px';
+    for (var i = 0; i < aLiSamll.length; i++) {
+    	aLiSamll[i].index=i;
+    	aLiSamll[i].onclick=function  () {
+    		if (this.index==now) return;
+    		now=this.index;
+    		tab();
+    		
+    	};
+    	//小图透明度
+    	aLiSamll[i].onmouseover=function  () {
+    		startMove(this,'opacity',100);
+
+    	}
+    	aLiSamll[i].onmouseout=function  () {
+    		if (this.index!=now) {
+    		startMove(this,'opacity',60);};
+    		
+    	}
+    };
+    function tab () {
+    	aLiBig[now].style.zIndex=nowIndex++;
+    		for (var i = 0; i < aLiSamll.length; i++) {
+    			startMove(aLiSamll[i],'opacity',60);
+    		};
+    		startMove(aLiSamll[now],'opacity',100);
+    		aLiBig[now].style.height=0;
+    		startMove(aLiBig[now],'height',320);
+    		if (now==0) {
+    			startMove(oUlSmall,'left',0);
+    		}else if(now==aLiSamll.length-1)
+    		{
+    			startMove(oUlSmall,'left',-(now-2)*aLiSamll[0].offsetWidth);
+
+    		}else{
+    		startMove(oUlSmall,'left',-(now-1)*aLiSamll[0].offsetWidth);}//移动小图
+    	
+    	// body...
+    }
+    oBtnPrev.onclick=function  () {
+    	now--;
+    	if (now==-1) {
+    		now=aLiSamll.length-1;
+    	};
+    	tab();
+    }
+    oBtnNext.onclick=function  () {
+    	now++;
+    	if (now==aLiSamll.length) {
+    		now=0;
+    	};
+    	tab();
+    }
+
+   var timer=setInterval(oBtnNext.onclick,2000);
+  oDiv.onmouseover=function  () {
+  	clearInterval(timer);
+
+  }
+  oDiv.onmouseout=function  () {
+  	timer=setInterval(oBtnNext.onclick,2000);
+  	
+  }
+}
+
+</script>
+<title></title>
+</head>
+<body>
+	<div id="palyimages" class="play">
+		<ul class="big_pic">
+			<div class="prev"></div>
+			<div class="next"></div>
+
+			<div class="text">加载图片说明。。。。。。</div>
+			<div class="length">计算图片数量。。。。。。</div>
+
+			<a href="javascript:;" class="mark_left"></a>
+			<a href="javascript:;" class="mark_right"></a>
+
+			<div class="bg"></div>
+
+			<li style="z-index:1;"><img src="images/1.jpg"></li>
+			<li><img src="images/2.jpg"></li>
+			<li><img src="images/3.jpg"></li>
+			<li><img src="images/4.jpg"></li>
+			<li><img src="images/5.jpg"></li>
+			<li><img src="images/6.jpg"></li>
+			<li><img src="images/7.jpg"></li>
+
+
+		</ul>
+		<div class="small_pic">
+			<ul style="width:390px;">
+				<li style="filter:100;opacity:1;"><img src="images/1.jpg"></li>
+				<li><img src="images/2.jpg"></li>
+			    <li><img src="images/3.jpg"></li>
+			    <li><img src="images/4.jpg"></li>
+			    <li><img src="images/5.jpg"></li>
+		     	<li><img src="images/6.jpg"></li>
+			    <li><img src="images/7.jpg"></li>
+
+			</ul>
+		</div>
+	</div>
+</body>
+
+</html>

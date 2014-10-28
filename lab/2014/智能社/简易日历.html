@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>半透明div</title>
+<script type="text/javascript">
+window.onload=function  () {
+	var arr=["1","2","3","4","5","6","7","8","9","10","11","12"];
+	var od=document.getElementById('div1');
+	var ol=od.getElementsByTagName('li');
+	var ot=od.getElementsByTagName('div')[0];
+	for (var i = 0; i < ol.length; i++)
+	 {  
+	 	ol[i].index=i;
+		ol[i].onmouseover=function()
+		{ 
+			for (var i = 0; i < ol.length; i++)
+			 {
+				
+			ol[i].className="";
+		};
+		this.className="active";
+		ot.innerHTML="<p>hello "+(this.index+1)+"月</p>"+arr[this.index];//写第几位
+
+		}
+	};
+}
+
+</script>
+<style>
+*{
+	margin: 0 auto;
+}
+#div1{
+	height: 320px;width: 200px;
+	background: #ccc;
+	border: 2px solid #ccc;
+}
+#div1 ul{list-style-type: none; margin-left: -30px;}
+#div1 li{
+	height: 50px;width: 50px;float: left;
+	background: red;margin-left: 10px;margin-top: 10px;
+	text-align: center;
+}
+#div1 .active{background: yellow;}
+#div1 .txt{
+	background:white;
+	height: 50px;width: 180px;
+	margin-top: 250px;
+}
+</style>
+</head>
+<body>
+<div id="div1">
+<ul>
+	<li class="active">1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+	<li>5</li>
+	<li>6</li>
+	<li>7</li>
+	<li>8</li>
+	<li>9</li>
+	<li>10</li>
+	<li>11</li>
+	<li>12</li>
+</ul>
+<div class="txt">
+</div>
+</div>
+</body>
+</html>

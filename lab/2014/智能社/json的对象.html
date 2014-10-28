@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Json的对象</title>
+	<script type="text/javascript">
+	// Json：适用于整个程序里只有一个，写起来比较简单
+	var json={
+		age:'blue',
+		qq:'23455',
+		showName: function  () {
+			alert("my name is "+this.age);
+		},
+		showQQ: function () {
+			alert("my QQ is "+this.qq);
+		}
+	}
+	var json2={
+		age:'wwww',
+		qq:'23455',
+		showName: function  () {
+			alert("my name is "+this.age);
+		},
+		showQQ: function () {
+			alert("my QQ is "+this.qq);
+		}
+	}
+	json.showQQ();
+	json.showName();
+	</script>
+</head>
+<body>
+
+</body>
+</html>

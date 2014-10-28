@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	var oDate=new Date();
+	oDate.setDate(oDate.getDate()+14);
+	document.cookie='user=blue;expires='+oDate;//设置过期时间
+	// oDate.setDate(oDate.getDate());//设置内部时间
+	alert(oDate.getFullYear()+'-'+(oDate.getMonth()+1)+'-'+oDate.getDate());
+	alert(document.cookie);
+	</script>
+</body>
+</html>

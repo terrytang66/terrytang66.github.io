@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="require.js"></script>
+	<script type="text/javascript">
+	define(function mod1(){
+		return {a:3};
+	})
+	define(['mod1'],function mod2(m1){
+		var a,b=2,c=3;
+		a=c*m1.a;
+		return{
+			a:a
+			b:b
+		};
+	});
+   require(['mod2'],function(m2){
+   	alert(m2.a*)
+   })
+
+	</script>
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>

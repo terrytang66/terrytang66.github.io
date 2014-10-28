@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <meta charset="utf-8"/>
+  <title> new document </title>  
+  <meta http-equiv="Content-Type" content="text/html; charset=gbk"/>   
+  <script type="text/javascript"> 
+  function openWindon(){
+   var mess = confirm("是否打开新窗口？");
+   if(mess==true)
+    {
+        var url=prompt("eneter you url","");
+        window.open('http://'+url,'_blank','width=400,height=500,menubars=no,status=no');}
+        
+    }
+    
+  </script> 
+ </head> 
+ <body> 
+ <form>
+	  <input type="button" value="新窗口打开网站" onclick="openWindon()" /> 
+ </form>
+ </body>
+</html>

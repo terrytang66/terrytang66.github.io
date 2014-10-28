@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cookie Html</title>
+</head>
+<body>
+	<script type="text/javascript">
+	// document.cookie='user=blue';//这里的=等价于添加
+	// document.cookie='pass=333';
+	// //对cookie设置过期时间
+	// alert(document.cookie);
+	function setCookie (name,value,iDay) {
+		var oDate = new Date();
+		oDate.setDate(oDate.getDate()+iDay);
+		document.cookie=name+'='+
+		value+';expires='+oDate;
+	}
+	setCookie('username','hello',10);
+	setCookie('pass','hello',14);
+	function getCookie(name){
+		var arr=document.cookie.split("; ");
+		for (var i = 0; i < arr.length; i++) {
+			var arr2=arr[i].split('=');
+			if (arr2[0]=name) {
+				return arr2[1];
+			};
+		};
+		return '';
+	}
+	// alert(getCookie('username'));
+	function removeCookie(name){
+		setCookie(name,1,-1);
+	}
+	//去除cookie
+
+	alert(removeCookie('username'));
+	</script>
+</body>
+</html>

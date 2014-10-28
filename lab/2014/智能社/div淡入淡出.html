@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<style type="text/css"> 
+#div1 {height: 800px;width:600px;background:url(images/041.jpg);
+filter:alpha(opacity:30);opacity: 0.3; }
+</style>
+<title>半透明div</title>
+<script type="text/javascript">
+var alpha=30;
+var timer=null;
+function startMove(iTarget){
+clearInterval(timer);
+var oD=document.getElementById('div1');
+timer=setInterval(function(){
+ 	var speed=0;
+ 	if(alpha<iTarget){
+ 		speed=10;
+ 	}else{
+ 		speed=-10;
+ 	} 
+ 	if (alpha==iTarget) {
+ 		clearInterval(timer);
+ 	}else{
+ 		alpha+=speed;
+ 		oD.style.filter='alpha(opacity:'+alpha+')';
+ 		oD.style.opacity=alpha/100;//火狐 
+ 	}
+ },40);
+}
+window.onload=function  () {
+	var oD=document.getElementById('div1');
+	oD.onmouseover=function(){
+		startMove(100);
+	}
+	oD.onmouseout=function(){
+		startMove(30);
+	}
+}
+
+
+</script>
+</head>
+<body>
+
+<div id="div1">
+
+</div>
+
+
+</body>
+</html>

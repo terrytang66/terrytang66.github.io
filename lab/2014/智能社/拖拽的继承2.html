@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖拽的继承</title>
+	<style type="text/css">
+   #div1{
+   	height: 200px;width: 200px;
+   	background-color: yellow;
+   	position: absolute;
+   }
+	</style>
+</head>
+<body>
+<script type="text/javascript">
+window.onload=function(){
+	new Drag('div1');
+}
+function Drag(id){
+	var _this=this;
+    this.disx=0;
+    this.disy=0;
+
+	this.oDiv = document.getElementById(id);
+    this.oDiv.onmousedown=function(){
+    	_this.fnDown(ev);
+    }
+}
+Drag.prototype.fnDown= function(ev){
+	var _this=this;
+	var oEvent=ev||event;
+	var this.disx=oEvent.clientX-this.oDiv.offsetLeft;
+	var this.disy=oEvent.clientY-this.oDiv.offsetTop;
+	document.onmousemove=function(ev){
+		_this.fnMove(ev);
+	}
+	document.onmouseup=function(){
+		_this.fnUp();
+	}
+}
+Drag.prototype.fnMove=function(ev){
+	var oEvent=ev||event;
+	this.oDiv.style.left=oEvent.clientX-this.disx+'px';
+	this.oDiv.style.top=oEvent.clientY-this.disy+'px';
+}
+Drag.prototype.fnUp=function(){
+	document.onmousemove=null;
+	document.onmouseup=null;
+}
+</script>
+
+	<div class="" id="div1"></div>
+</body>
+</html>

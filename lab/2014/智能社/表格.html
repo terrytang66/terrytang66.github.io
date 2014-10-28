@@ -1,0 +1,64 @@
+<!-- childNodes数组  子节点   IE6-8没问题 但是会包含文本
+children 只包括元素 不包括文本 建议使用
+nodeType 节点类型 3=文本节点  1=元素
+parentNode 查找某一个元素的父节点 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>半透明div</title>
+<script type="text/javascript">
+window.onload=function  () {
+	 var oTab=document.getElementById('tab1');
+	 var oldColor='';
+	 for (var i = 0; i < oTab.tBodies[0].rows.length; i++) {
+	 	oTab.tBodies[0].rows[i].onmouseover=function(){
+	 		oldColor=this.style.background
+	 		this.style.background='green';
+	 	}
+	 	oTab.tBodies[0].rows[i].onmouseout=function(){
+	 		this.style.background=oldColor;
+	 	}
+	 	if (i%2) {
+	 		oTab.tBodies[0].rows[i].style.background='';
+	 	}else{
+	 		oTab .tBodies[0].rows[i].style.background='#ccc';
+	 	}
+
+	 };
+ 
+}
+</script>
+</head>
+<body>
+<table id="tab1" border="1" width="500px">
+	<thead>
+		<td>ID</td>
+		<td>姓名</td>
+		<td>年龄</td>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>11</td>
+			<td>111</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>12</td>
+			<td>122</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>13</td>
+			<td>133</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>14</td>
+			<td>144</td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	function countDown(obj,second){
+    // 如果秒数还是大于0，则表示倒计时还没结束
+    if(second>=0){
+          // 获取默认按钮上的文字
+          if(typeof buttonDefaultValue === 'undefined' ){
+            buttonDefaultValue =  obj.innerHTML;
+        }
+        // 按钮置为不可点击状态
+        obj.disabled = true;            
+        // 按钮里的内容呈现倒计时状态
+        obj.innerHTML = '已发送'+second+'秒';
+        // 时间减一
+        second--;
+        // 一秒后重复执行
+        setTimeout(function(){countDown(obj,second);},1000);
+    // 否则，按钮重置为初始状态
+    }else{
+        // 按钮置未可点击状态
+        obj.disabled = false;   
+        // 按钮里的内容恢复初始状态
+        obj.innerHTML = buttonDefaultValue;
+    }   
+}
+
+	</script>
+</head>
+<body>
+	<h1>
+    js按钮三十秒倒计时效果</h1>
+<hr />
+<!-- <p>
+    <input onclick="countDown(this,120);" type="button" value="发送短信" /></p>
+
+    <button onclick="countDown(this,120);">Hello</button>
+<hr />
+<h3>
+    琼台博客 qttc.net</h3>
+<p>
+    在按钮上绑定的js单击事件中&lsquo;30&rsquo;代表倒计时秒数，可以在绑定时设置秒数，灵活应用
+    </p>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button type="button" id="btn"  />
+	免费获取验证码
+	</button>
+	<script type="text/javascript">
+var wait=60;
+function time(o) {
+        if (wait == 0) {
+            o.removeAttribute("disabled");           
+            o.innerHTML="免费获取验证码";
+            wait = 60;
+        } else {
+            o.setAttribute("disabled", true);
+            o.innerHTML="重新发送(" + wait + ")";
+            wait--;
+            setTimeout(function() {
+                time(o)
+            },
+            1000)
+        }
+    }
+document.getElementById("btn").onclick=function(){time(this);}
+</script>
+</body>
+</html>

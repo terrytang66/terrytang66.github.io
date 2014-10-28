@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>post基础表单</title>
+	<link rel="stylesheet" type="text/css" href="style/jquery-1.9.1.min.js">
+	<script type="text/javascript">
+		//查看浏览器是否原生支持颜色选择器
+		function hasColorSupport() {
+			input=document.createElement("input");
+			input.setAttribute("type","color");
+			var hasColorType=(input.type!=="text");
+			//处理Safari/Chrome
+			if (hasColorType) {
+				var testString="foo";
+				input.value=testString;
+				hasColorType=(input.value!=testString);
+			};
+			return(hasColorType);
+			// body...
+		}
+		if (!hasColorSupport()) {
+			$('input[type=color]').simpleColor();
+		};
+		// end
+		//查看浏览器是否存在autofocus属性
+		function hasAutoFocus(){
+			var element=document.createElement('input');
+			return 'autofocus' in element;
+		}
+		$(function(){
+			if (!hasAutoFocus()) {
+				$('input[autofocus=true').focus();
+			};
+		})
+		// end
+	</script>
+</head>
+<body>
+	<form action="/projects/1" method="post">
+		<fieldset id="personal_information">
+			<ol>PROject
+				<li>
+					<label for="name">Name</label>
+					<input type="text" name="name" autofocus id="name">
+				</li>
+				<li>
+					<input type="submit" value="Submit">
+				</li>
+				<li>
+					<label for="priority">Priority</label>
+					<input type="range" min="0" max="10" name="priority" id="priority">
+					<!-- 滑动块 -->
+				</li>
+				<li>
+					<label for="estimated_hours">Esi</label>
+					<input type="number" name="estimated_hours" min="0" max="10" id="estimated_hours">
+					<!-- 选值框 -->
+				</li>
+				<li>
+					<label for="start_date">
+						<input type="date" name="start_date" value="2014-09-09" id="start_date">
+					</label>
+					<!-- 日期控件 -->
+				</li>
+				<li>
+					<label for="email">Email</label>
+					<input type="email" name="email" class="" id="email">
+					<!-- emial -->
+				</li>
+				<li>
+					<label for="url">URL</label>
+					<input type="url" name="url" id="url">
+					<!-- URL -->
+				</li>
+				<li>
+					<label for="project_color">COlor</label>
+					<input type="color" name="project_color" id="project_color">
+					<!-- color -->
+				</li>
+				<li>
+					<label for="name">
+						<input type="text" name="name" autofocus id="name">
+					</label>
+					<!-- autofocus自动聚焦 -->
+				</li>
+			</ol>
+		</fieldset>
+	</form>
+</body>
+</html>

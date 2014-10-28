@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Blog</title>
+	 <!--[if lt IE 9]>
+    <script type="text/javascript">
+    	document.createElement('nav');
+    	document.createElement('header');
+    	document.createElement('footer');
+    	document.createElement('section');
+    	document.createElement('aside');
+    	document.createElement('article');
+    </script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="style/blog.css">
+    <!-- 每个click事件添加一个监听器  -->
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+    $(function(){
+    	$(".popup").click(function(event){
+    		event.preventDefault();//防止链接打开 URL
+    		var href=$(this).attr("href");
+    		var width=$(this).attr("data-width");
+    		var height=$(this).attr("data-height");
+    		var  popup=window.open(href,"popup","height="+height+",width="+width+"");
+    	})
+    })
+    </script>
+    <!-- end -->
+</head>
+<body>
+
+	<header id="page_header">
+		<h1>AwesomeCo Blog!</h1>
+		<nav>
+			<ul>
+				<li><a href="https://www.baidu.com" class="popup" data-width="600" data-height="400">Home</a></li>
+				<li><a href="https://www.imocc.com" class="popup" data-width="600" data-height="400">About</a></li>
+				<li><a href="https://www.baidu.com" class="popup" data-width="600" data-height="400">Terms  of Service</a></li>
+				<li><a href="https://www.cctv.com" class="popup" data-width="600" data-height="400"> Privacy</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section id="posts">
+		<article class="post">
+			<header>
+				<h2>How to Learn</h2>
+				<p class="pstyle">Posted by
+				<time datatime="2014 -10-01T14:39">October 1st,2014 at 2:39PM</time>
+				</p>
+			</header>
+			<aside>
+				<p>
+					&quto;Never give someone a chance to say no when selling your product .&quot;
+				</p>
+			</aside>
+			<p class="pstyle">
+			fmsijihfijfkdmslm skmflskml,,,,,,,,,,,,,,,,,,,,,,,sokfosokfosfkkkkkkkkkkkksfl;sflsfklsfmnkslmfsmflksmflksmflksopajfpewgkpokgpokgrgklregm,lmssfsffffffmsijihfijfkdmslm skmflskml,,,,,,,,,,,,,,,,,,,,,,,sokfosokfosfkkkkkkkkkkkksfl;sflsfklsfmnkslmfsmflksmflksmflksopajfpewgkpokgpokgrgklregm,lmssfsfffffffmsijihfijfkdmslm
+			</p>
+			<p class="pstyle">
+			fmsijihfijfkdmslm skmflskml,,,,,,,,,,,,,,,,,,,,,,,sokfosokfosfkkkkkkkkkkkksfl;sflsfklsfmnkslmfsmflksmflksmflksopajfpewgkpokgpokgrgklregm,lmssfsfffffffmsijihfijfkdmslm skmflskml,,,,,,,,,,,,,,,,,,,,,,,sokfosokfosfkkkkkkkkkkkksfl;sflsfklsfmnkslmfsmflksmflksmflksopajfpewgkpokgpokgrgklregm,lmssfsffffff
+			</p>
+			<footer>
+				<p><a href=""><i>25 Coments</i></a></p>
+			</footer>
+		</article>
+	</section>
+	<section id="sidebar">
+		<nav>
+			<h3>Artivcle</h3>
+			<ul>
+				<li><a href="">10</a></li>
+				<li><a href="">11</a></li>
+				<li><a href="">12</a></li>
+				<li><a href="">1</a></li>
+				<li><a href="">2</a></li>
+				<li><a href="">3</a></li>
+				<li><a href="">4</a></li>
+				<li><a href="">5</a></li>
+				<li><a href="">6</a></li>
+				<li><a href="">7</a></li>
+				<li><a href="">8</a></li>
+				<li><a href="">9</a></li>
+			</ul>
+		</nav>
+	</section>
+	<section id="pledge">
+		<header>
+			<h3>Our Funfraising Goal</h3>
+		</header>
+		<meter title="USD" id="pledge_goal" value="4200" min="0" max="5000">	$2500.00
+		</meter>
+		<p>Help</p>
+		<progress max="100" value="50">
+			<span>50</span>%
+	    </progress>
+	</section>
+	<footer id="page_footer">
+		<p>&copy;2010 AwesomeCo.</p>
+		<nav>
+		<ul>
+			<li><a href="">Home</a></li>
+			<li><a href="">About</a></li>
+			<li><a href="">Terms  of Service</a></li>
+			<li><a href="">Privacy</a></li>
+		</ul>
+	</nav>
+	</footer>
+</body>
+</html>

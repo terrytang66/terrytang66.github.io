@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style type="text/css">
+#div1{
+	width: 200px;
+	height: 200px;
+	background:red;
+	}
+	</style>
+</head>
+<body>
+<div  id="div1" onmouseover="toGreen()" onmouseout="toRed()">
+	
+</div>
+<script type="text/javascript">
+	function toGreen(){
+		var a =document.getElementById('div1');//声明变量,给东西取得别名
+	    a.style.height='300px';
+		a.style.width='300px';
+		a.style.background='blue';
+
+	}
+	// function toRed(){
+	// 	document.getElementById('div1').style.height='200px';
+	// 	document.getElementById('div1').style.width='200px';
+	// 	document.getElementById('div1').style.background='red';
+	// }
+	function toRed(){
+	    var a =document.getElementById('div1');//声明变量,给东西取得别名
+
+		a.style.height='200px';
+		a.style.width='200px';
+		a.style.background='red';
+	}
+	// 重用
+</script>
+
+
+</body>
+</html>

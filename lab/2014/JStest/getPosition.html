@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Position</title>
+
+</head>
+<body>
+<div  id="idd" style="width:200px;height:400px;background-color:red;">
+	
+</div>
+
+<script type="text/javascript">
+		function getPageare(){
+			if (document.compatMode=="BackCompat") {
+				return{
+					width:document.body.scrollWidth,
+					height:document.body.scrollHeight
+				}
+			}else{
+				return{
+					width:document.documentElement.scrollWidth,
+					height:document.documentElement.scrollHeight
+				}
+			}
+		}
+		var  oD=document.getElementById('idd');
+		alert(oD);
+		alert(getPageare(oD));
+	</script>
+</body>
+</html>

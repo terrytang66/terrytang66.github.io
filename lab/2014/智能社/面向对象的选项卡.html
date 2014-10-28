@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>面向对象的选项卡</title>
+	<style type="text/css">
+     #div1 input{background-color: #fff;}
+     #div1 input .active{
+     	background-color: yellow;
+     }
+     #div1 div{
+     	width: 200px;height: 200px;
+     	background-color: blue;
+     	display: none;
+     }
+
+	</style>
+
+</head>
+<body>
+   <div id="div1">
+   		<input type="button" class="active" value="1" class="button">
+   		<input type="button" value="2" class="button">
+   		<input type="button" value="3" class="button">
+   		<div style="display:block;">111</div>
+   		<div>222</div>
+   		<div>333</div>
+   </div>
+	 
+<script type="text/javascript">
+window.onload=function(){
+	new TabSwitch('div1');
+}
+     function TabSwitch(id){
+
+     	var _this=this;
+     	var oDiv=document.getElementById(id);
+     	this.oBtn=oDiv.getElementsByTagName('input');
+     	this.aDivs=oDiv.getElementsByTagName('div');
+     	for (var i = 0; i < this.oBtn.length; i++) {
+     		this.oBtn[i].index=i;
+     		this.oBtn[i].onclick=function(){
+     			_this.fnClick(this);
+     		}
+     	};
+     }
+     TabSwitch.prototype.fnClick =function(oBtn){
+		for (var i = 0; i < this.oBtn.length; i++) {
+			this.oBtn[i].className='';
+			this.aDivs[i].style.display='none';
+		};
+		oBtn.className='active';
+		this.aDivs[oBtn.index].style.display='block';
+	}
+	</script>
+</body>
+</html>

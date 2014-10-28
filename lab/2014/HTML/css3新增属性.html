@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" manifest="cache.manifest">
+<!-- mainfest定义离线应用文件的使用 -->
+<head>
+	<meta charset="UTF-8">
+	<!-- 规定页面字符集 -->
+	<meta http-equiv="pragma" content="no-cache">
+	<!-- 去除缓存 -->
+	<title>Css3新增属性</title>
+	<link rel="icon" href="demo_icon.gif" type="image/gif" sizes="16*16">
+	<!-- 定义页头小图标 -->
+    <base href="http://localhost/" target="_blank">
+    <!-- target 超链接打开用http做开头 -->
+    <script defer src="http://code.jquery.com/jquery-1.10.1.min.js" onload="alert('a')"></script>
+    <!-- defer 下载脚本文件 等页面加载完再执行 -->
+    <script async src="http://code.jquery.com/jquery-migrate-1.2.1.min.js" onload="alert('b')"></script>
+    <!-- async 下载脚本文件并马上执行 不停止浏览器解析下内容 异步执行 -->
+
+</head>
+<body>
+	<a href="" media="tv">电视</a>
+	<!-- media 优化属性  超链接对某一个进行优化-->
+    <a href="http://www.baidu.com" hreflang="zh" rel="external"></a>
+    <!-- hreflang 网站语言   rel 外部网址 -->
+    <ol start="50" reveresed>
+	   	<li>55</li>
+	   	<li>552</li>
+    </ol>
+	<!-- start 开始序号 reversed 倒序 -->
+	<menu type="toolbar" label="Menu">
+	    <li><input type="checkbox"/>Red</li>
+	    <li><input type="checkbox"/>Green</li>
+	</menu>
+	<!-- menu type三种类型：右键 上下文 工具条 -->
+	<div>
+		<style type="text/css" scoped>
+		    h1{color: red;}
+		    p{color: blue;}
+ 
+		</style>
+		<h1>Hello</h1>
+		<p>p like a</p>
+	</div>
+	<!-- scoped div内部样式 -->
+	<iframe  seamless srcdoc="<h1>Hello</h1>" sandbox src="http://www.baidu.com"></iframe>
+	<!-- seamless 无边框 无边距 srcdoc 内嵌内容 会替换src内的  sandbox 规定内部框架安全级别 -->
+	<!-- sandbox 严格控制：禁止 提交表单 运行JS 页面跨域（不是相同的源）  以下是四个属性值-->
+	<!--allow-same-origin	允许 iframe 内容被视为与包含文档有相同的来源。
+		allow-top-navigation	允许 iframe 内容从包含文档导航（加载）内容。
+		allow-forms	允许表单提交。
+		allow-scripts	允许脚本执行。 -->
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style type="text/css">
+	#div1{width: 100px;height:100px;border: 1px solid black; }
+	.box{background:red;
+	}
+</style>
+<script type="text/javascript">
+	function toRed () {
+		var ob=document.getElementById('div1');
+		ob.className='box';
+	}
+</script>
+</head>
+<body>
+<input type="button" value="变红" onclick="toRed()">
+<div id="div1">
+
+</div>
+<a href="javascript:;">链接</a>
+<!-- 一般不放js在a中
+ --></body>
+</html>

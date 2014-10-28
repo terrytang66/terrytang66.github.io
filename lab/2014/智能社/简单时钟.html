@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>半透明div</title>
+
+<script type="text/javascript">
+function toDou(n){
+	if (n<10) { return '0'+n;}
+	else {return ''+n;}
+}
+window.onload=function(){
+	var im=document.getElementsByTagName('img');
+	//var str='123455';
+// 	setInterval(function(){var ad=new Date();
+// 	var str=toDou(ad.getHours())+toDou(ad.getMinutes())+toDou(ad.getSeconds());
+
+// 	for (var i = 0; i < im.length; i++) {
+// 		im[i].src='images/'+str[i]+'.png'
+// 	};},1000);
+// } 出现一秒钟的延迟   解决方法如下所示：
+function tick(){
+	var ad=new Date();
+ 	var str=toDou(ad.getHours())+toDou(ad.getMinutes())+toDou(ad.getSeconds());
+ 	for (var i = 0; i < im.length; i++) {
+ 		im[i].src='images/'+str.charAt(i)+'.png'
+ 	};}
+ 	setInterval(tick,1000);
+ 	tick();
+}
+//存在兼容性问题 str[0] 改为str.charAt()
+</script>
+
+<style>
+
+
+</style>
+</head>
+<body style="font-size:50px;">
+
+<img src="images/0.png">
+<img src="images/0.png">
+:
+<img src="images/0.png">
+<img src="images/0.png">
+:
+<img src="images/5.png">
+<img src="images/0.png">
+
+</body>
+</html>

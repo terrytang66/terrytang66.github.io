@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test1</title>
+</head>
+<body>
+	<script type="text/javascript">
+	// var flag=true;
+	// var flag2=true;
+	// if(flag==true)
+	// {
+	// 	var i=0; 
+	// 	j=1; 
+	// 	if(flag2==true)
+	// 	{     
+	// 		for(var m=0;m<5;m++)
+	// 		{
+	// 		}
+	// 	}
+	// }
+	// alert(i);//0
+ // 	alert(j);//1
+	// alert(m);//10
+	// var x = 1; 
+	// function ScopeTest(){
+	//     alert( x );   
+	//     var c = 'hello world';
+	//     alert( c );    
+	// }
+	// ScopeTest();
+	// var name = 'laruence';     
+	// function echo()
+	// {         
+	//   alert(name);   
+	// }      
+	// function env()
+	// {
+	//     var name = 'eve';         
+	//     echo();   
+	// }      
+	// echo();
+	// env();
+	// function test(xxx){
+	//   alert(xxx);
+	//   var xxx = 123; 
+	//   function ccc(){  
+	//   }
+	//   alert(ccc); 
+	// }
+	// test(444);
+
+	  // function JSClass() {
+   //          this.m_Text = 'division element';
+   //          this.m_Element = document.createElement('DIV');
+   //          this.m_Element.innerHTML = this.m_Text;
+
+   //          this.m_Element.addEventListener('onclick', this.ToString,false);
+   //      }
+
+   //      JSClass.prototype.Render = function() {
+   //          document.body.appendChild(this.m_Element);
+   //      }
+
+   //      JSClass.prototype.ToString = function() {
+   //          alert(this.m_Text);
+   //      };
+
+   //      var jc = new JSClass();
+   //      jc.Render();//添加渲染div元素
+   //      jc.ToString(); //输出 division element
+   // var obj = {  
+   //   i : "test",  
+   //   m : function(){  
+	  //       alert(this.i);//指向obj对象 ,值test  
+	  //       function B(){  
+	  //          var i = 1;  
+	  //          alert(i);//指向window对象,值undefined  
+	  //       }  
+	  //       B();//B并不是window的方法，this为什么也指向window？？？？？？  
+	  //    }  
+	  // }  
+	  // obj.m();   
+	  //this指向的是当前函数的作用域,而不是函数的调用者 
+	//函数的作用域在其定义时已经确定,但可以动态改变. 
+	//行内嵌js作用域会出现比较特别诡异的情况,不推荐这种写法. 
+	var x=1,y=0,z=0;
+	function add(n){
+	    return n=n+1;
+	}
+	y=add(x);
+	function add(n){
+	    return n=n+3;
+	}
+	z=add(x);
+    alert(x);
+    alert(y);
+    alert(z);
+	</script>
+</body>
+</html>

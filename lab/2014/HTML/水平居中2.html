@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>未知宽高div在页面内水平垂直居中</title>
+<style>
+*{margin:0; padding:0;}
+body,html{overflow:hidden; height:100%;}
+.box {height: 100%; overflow: hidden; position: relative; width: 100%; display: table;}
+.middle {top:50%;text-align:center;display: table-cell; vertical-align: middle; *position:absolute; *left:50%;}
+.content{border:#09F solid 1px; margin:0 auto; position:relative; top:-50%;font:12px/2 "Microsoft YaHei"; padding:0 10px; display:table; *left:-50%;}
+</style>
+</head>
+
+<body>
+<div class="box">
+        <div class="middle">
+        <div class="content">未知宽高div在页面内水平垂直居中</div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>半透明div</title>
+<script type="text/javascript">
+window.onload=function  () {
+	var oDiv=document.getElementById('div1');
+	var oParent=document.getElementById('parent');
+	var oDiv2=document.getElementById('div2');
+	var diaX=0;
+	oDiv.onmousedown=function  (ev) {
+		var oEvent=ev||event;
+		diaX=oEvent.clientX-oDiv.offsetLeft;
+
+	    document.onmousemove=function  (ev) {
+		var oEvent=ev||event;
+		var l=oEvent.clientX-diaX;
+		if(l<0){
+			l=0;
+		}
+		if(l>oParent.offsetWidth-oDiv.offsetWidth){
+			l=oParent.offsetWidth-oDiv.offsetWidth;
+		}
+		oDiv.style.left=l+'px';
+		var scrollp=l/(oParent.offsetWidth-oDiv.offsetWidth);
+		document.title=scrollp;
+		// oDiv2.style.height=400*scrollp+'px';
+		// oDiv2.style.width=400*scrollp+'px';
+		oDiv2.style.filter='alpha(opacity:'+scrollp*100+')';
+		oDiv2.style.opacity=scrollp;
+
+	    }
+	    document.onmouseup=function  () {
+		document.onmousemove=null;
+		document.onmouseup=null; 
+	}   
+	return false;
+
+	}
+	
+}
+</script>
+<style>
+#parent{width: 600px;height: 20px;background: #ccc;position: relative;margin: 0 auto;}
+#div1{position: absolute;height: 20px;width: 20px;background: red;left: 0;top: 0;}
+#div2{
+	width: 300px;height: 300px;background: green;filter:alpha(opacity=0);opacity: 0;
+}
+</style>
+</head>
+<body>
+<div id="parent">
+	<div id="div1"></div>
+
+</div>	
+<div id="div2"></div>
+</body>
+</html>

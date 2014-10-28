@@ -1,0 +1,44 @@
+/*页面基本设置*/
+body{
+	width: 960px;margin: 15px auto;font-family: Arial,"MS Trebuchet",sans-serif;
+}
+p{
+	margin: 0 0 20px 0;
+}
+p,li{
+	line-height: 20px;
+}
+/*end*/
+/*头部*/
+header#page_headder{
+	width: 100%;
+}
+/*end*/
+/*导航*/
+header#page_header nav ul,#page_footer nav ul{
+	list-style:none;margin: 0;padding: 0;
+}
+header#page_header nav ul li, #page_footer nav ul li{
+	padding: 0;margin: 0 20px 0 0;display: inline;
+}
+/*end*/
+/*#posts*/
+section#posts{
+	float: left;width: 74%;
+}
+section#posts .pstyle{
+	width: 74%;word-break:break-all;margin-top: 50px;
+}
+section#posts aside{
+	float: right;width: 35%;margin-left: 5%;font-size: 20px;line-height: 20px;
+}
+/*end*/
+/*浮动侧边栏*/
+section#sidebar{
+	float: left;width: 25%;
+}
+/*end*/
+/*footer*/
+footer#page_footer{
+	clear: both;width: 100%;display: block;text-align: center;
+}

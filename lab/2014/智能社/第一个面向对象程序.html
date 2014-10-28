@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>面向对象1</title>
+	<script type="text/javascript">
+		function createPerson(se,qq){ //构造函数
+			// var obj = new Object();
+			//原料
+
+			//加工
+			this.se=se;
+			this.qq=qq;
+			this.showName=function() {
+				alert(this.se);
+			}
+			this.showQQ=function(){
+				alert(this.qq);
+			}
+			//出厂
+			// return obj;
+		}
+		var obj1 = new createPerson('hello','11111');
+		// var obj=new Object();
+		// obj.name='hello';
+		// obj.qq='1111111';
+		// var obj2=new Object();
+		// obj2.name='22hello';
+		// obj2.qq='122111111';
+		// obj.showName=function() {
+		// 	alert(this.name+this.qq);
+		// }
+		// // obj.showQQ=function(){
+		// // 	alert(this.qq);
+		// // }
+		// obj.showName();
+		// // obj.showQQ();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

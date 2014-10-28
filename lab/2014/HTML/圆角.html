@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Circle</title>
+	<style type="text/css">
+		/*	•-moz(例如 -moz-border-radius)用于Firefox
+		•-webkit(例如：-webkit-border-radius)用于Safari和Chrome。*/
+
+        #wrap{
+        	margin: 0 auto;
+        }
+	    #round {
+		    padding:10px; width:300px; height:50px;
+		    border: 5px solid #dedede;
+		    -moz-border-radius: 15px;      /* Gecko browsers */
+		    -webkit-border-radius: 15px;   /* Webkit browsers */
+		    border-radius:15px;           /* W3C syntax */
+		    background:#FC9; 
+
+		}
+		#round1 {
+		    padding:10px; width:300px; height:50px;
+		    background:#FC9; 
+		    -moz-border-radius: 15px;
+		    -webkit-border-radius: 15px;
+		    border-radius:15px;
+		}
+		#round2{
+		    padding:10px; width:300px; height:50px;
+		    border: 5px solid #dedede;
+		    -moz-border-radius: 15px;      /* Gecko browsers */
+		    -webkit-border-radius: 15px;   /* Webkit browsers */
+		    border-radius:15px;           /* W3C syntax */
+
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+	    <div id="round">圆角图形</div>
+	    <div id="round1">圆角内部</div>  
+	    <div id="round2">圆角边框</div>
+    </div>
+</body>
+</html>
