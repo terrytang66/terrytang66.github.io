@@ -206,6 +206,25 @@
 		border-bottom: 20px solid #70737D;
 		border-radius: 90px 0px 90px 100px;
      }
+     .message{
+     	position: relative;
+     	padding:16px;
+     	top: -107px;left: 500px;
+     	border: 1px solid #fff;
+     	height: 100px;
+     	width:200px;text-align: center;
+     	border-radius: 50%;
+     }
+     .all{
+     	position: absolute;
+     	width: 198px;height: 80px;
+     	left: 10px;top: 25px;
+     	text-align: center;
+     	margin: 0 auto;
+     	color: #fff;font-size: 24px;
+     	font-weight: bold;
+
+     }
      @-webkit-keyframes shake{
 	     0%, 100% {-webkit-transform: rotate(21deg);}
 		5%,  25%,  45%,  65%,  85% {-webkit-transform: rotate(14deg);;}
@@ -271,10 +290,10 @@
 		animation: changel 6s infinite;
      }
      .extend{
-     	-webkit-animation: extend 2s 1;
-		-moz-animation: extend  2s 1;
-		-ms-animation: extend 2s 1;
-		animation: extend 2s 1;
+     	-webkit-animation: extend 1s 1;
+		-moz-animation: extend  1s 1;
+		-ms-animation: extend 1s 1;
+		animation: extend 1s 1;
      }
 	</style>
 </head>
@@ -299,7 +318,7 @@
 						<div class="eye_in_r changel"></div>
 					</div>
 					<div class="nose"></div>
-					<div class="mouth extend"></div>
+					<div class="mouth" id="mouth"></div>
 					<div class="beard_l">
 						<div class="bl_1"></div>
 						<div class="bl_2"></div>
@@ -318,15 +337,23 @@
 				</div>
 				<div class="footer">
 					<div class="foot_l"></div>
-					<div class="foot_r"></div>
+					<div class="foot_r" id="footr"></div>
 				</div>
 				<div class="tail move"></div>
+			</div>
+		</div>
+		<div class="message">
+			<div class="all" id="mes">
+					I'm very hungry!!I need a fish!!!
 			</div>
 		</div>
 	</div>
 	<script type="text/javascript">
     window.onload=function(){
         var afish=document.getElementById("fish");
+        var mouth=document.getElementById("mouth");
+        var footr=document.getElementById("footr");
+        var mes=document.getElementById("mes");
         var diaX=0,diaY=0;
         afish.onmousedown=function(ev){
  			var oEvent=event||ev;
@@ -336,6 +363,7 @@
 				var oEvent=ev||event;
 				var l=oEvent.clientX-diaX;
 				var t=oEvent.clientY-diaY;
+
 	            if (l<0) {
 					l;
 				}else if(l>document.documentElement.clientWidth-afish.offsetWidth){
@@ -346,15 +374,39 @@
 				}else if(t>document.documentElement.clientHeight-afish.offsetHeight){
 					t=document.documentElement.clientHeight-afish.offsetHeight;
 				}
+				if ((l>=306&&l<=356)&&(t>=186&&t<=218)) {
+					
+					mouth.className="extend mouth";
+					setTimeout(function(){
+						afish.style.display="none";
+						footr.className= "foot_r jump";
+						mes.innerHTML="I'm enough!"
+					},1000);
+					setTimeout(function(){
+						afish.style.left="48px";
+						afish.style.top="48px";
+						afish.style.display="block";
+						footr.className="foot_r";
+						mes.innerHTML="I'm very hungry!!I need a fish!!!"
+					},2000);
+
+					
+
+					
+				};
 	            afish.style.left=l+'px';
 	 			afish.style.top=t+'px';
 
+
  			}
+
+
  			
         document.onmouseup=function() {
 			document.onmousemove=null;
 			document.onmouseup=null;
-			}   
+			} 
+ 
 			return false;
      }
  }
