@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绘制圆弧</title>
+</head>
+<body>
+	<!-- context.arc(
+	centerx,centery,radius,//圆心坐标，半径
+	startingAngle,endingAngle,//开始结束弧度
+	anticlockwise=false//顺（false） 逆时针
+	) -->
+	<canvas id="canvas" style="border:3px solid #eee;margin:0 auto;display:block;">
+		
+	</canvas>
+	<script type="text/javascript">
+	window.onload=function(){
+	 	var canvas=document.getElementById("canvas");
+	 	canvas.width=800;
+	 	canvas.height=800;
+
+	 	var context=canvas.getContext("2d");
+ 		context.lineWidth=2;
+ 		context.strokeStyle="blue";
+	 	for (var i = 0; i < 15; i++) {
+	 	
+	 		context.beginPath();
+	 		context.arc(i*40+50,60,20,0,((i+2)/8)*Math.PI);
+	 		context.closePath();//会自动封闭首尾线段
+	 		context.stroke();
+	 	};
+
+	 	for (var i = 0; i < 15; i++) {
+	 	
+	 		context.beginPath();
+	 		context.arc(i*40+50,130,20,0,((i+2)/8)*Math.PI);
+	 		// context.closePath();//会自动封闭首尾线段
+	 		context.stroke();
+	 	};
+	 		
+	 	context.fillStyle="black";	
+	 	for (var i = 0; i < 15; i++) {
+	 	
+	 		context.beginPath();
+	 		context.arc(i*40+50,200,20,0,((i+2)/8)*Math.PI,true);
+	 		context.closePath();//会自动封闭首尾线段
+	 		context.stroke();
+	 		context.fill();
+	 	};
+	 	
+	 }
+
+	</script>
+</body>
+</html>

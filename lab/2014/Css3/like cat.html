@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Like A Cat</title>
+	<style type="text/css">
+	 body{
+	 	background-color:#FF983D; 
+	 	padding: 0px;margin: 0px;
+	 }
+	 .main{
+	 	margin: 0 auto;
+	 	width:600px;
+	 	border:1px solid #ccc;
+	 }
+	 .header{
+	 	position: relative;
+	 	height: 30px;width: 100px;
+	 	top: 50px;left: 50px;
+	 	border: 1px solid #ccc;
+	 }
+	 .feet{
+	 	position: absolute;
+	 	border-left: 15px solid #2492b3;
+	 	border-top: 15px solid transparent;
+	 	border-bottom: 15px solid transparent;
+	 }
+     .fish{
+     	height: 30px;width: 70px;
+     	position: absolute;
+     	left: 5px;
+     	border-radius: 50%;
+     	background-color: #2592b3;
+     }
+     .fish_eye{
+     	height: 10px;width: 10px;
+     	background-color: #fff;
+     	position: absolute;z-index: 1111;
+     	border-radius: 50%;
+     	top: 10px;
+     	left: 50px;
+     }
+	 .content{
+	 	margin-top: 100px;
+	 	margin-left: 250px;
+	 	width: 400px;
+	 	height: 400px;
+	 	border: 1px solid #ccc;
+	 	position: relative;
+	 }
+	 .ear{
+	 	position: absolute;top: 30px;
+	 	border-bottom: 120px solid  #70737D;
+	 	border-left: 60px solid transparent;
+	 	border-right: 60px solid transparent;
+	 }
+	 #ear_l{
+	 	-webkit-transform:rotate(-21deg);
+	 	left: 24px;
+	 }
+	 #ear_r{
+	 	-webkit-transform:rotate(21deg);
+	 	left: 88px;
+
+	 }
+	 .face{
+	 	position: relative;
+	 	height:160px;width: 180px;
+	 	background-color:#70737D;
+	 	border-radius: 100px;
+	 	top: 70px;
+	 	left: 26px;
+	 }
+	 .eye_l{
+	 	width: 50px;
+		height: 50px;
+		top: 38px;
+		border-radius: 50%;
+		background-color: #fff;
+		left: 25px;
+		position: absolute;
+	 }
+	 .eye_in_l{
+	 	width: 25px;
+		height: 25px;
+		top: 13px;left: 13px;
+		border-radius: 50%;
+		background-color: #000;
+		position: absolute;
+	 }
+	 .eye_r{
+	 	width: 50px;
+		height: 50px;
+		top: 38px;left: 104px;
+		border-radius: 50%;
+		background-color: #fff;
+		position: absolute;
+	 }
+	 .eye_in_r{
+	 	width: 25px;
+		height: 25px;
+		top: 13px;left: 13px;
+		border-radius: 50%;
+		background-color: #000;
+		position: absolute;
+	 }
+	 .nose{
+	 	height: 8px;
+		width: 12px;
+		position: absolute;
+		top: 115px;
+		left: 85px;
+		border-radius: 90%;
+		background-color: #E8A29C;
+	 }
+	 .mouth{
+	 	border: 1px solid #000;
+	 	z-index: 111;
+	 	width: 10px;position: absolute;
+	 	top: 140px;left: 85px;
+	 }
+	 .beard_l{
+	 	width: 30px;
+        position: absolute;
+        left: 41px;top: 109px;
+
+	 }
+	 .bl_1{
+	 	border: 1px solid  #000;
+	 	width: 30px;
+	 	-webkit-transform:rotate(10deg);
+	 }
+	.bl_2{
+	 	border: 1px solid  #000;
+	 	width: 30px;
+	 	margin-top: 7px;
+	 	-webkit-transform:rotate(-5deg);
+	 }
+
+	 .bl_3{
+	 	border: 1px solid  #000;
+	 	width: 30px;
+	 	margin-top: 7px;
+	 	-webkit-transform:rotate(-15deg);
+	 }
+	 .beard_r{
+	 	width: 30px;
+        position: absolute;
+        left: 108px;top: 109px;
+
+	 }
+	 .br_1{
+	 	border: 1px solid  #000;
+	 	width: 30px;
+	 	-webkit-transform:rotate(-10deg);
+	 }
+	.br_2{
+	 	border: 1px solid  #000;
+	 	width: 30px;
+	 	margin-top: 7px;
+	 	-webkit-transform:rotate(5deg);
+	 }
+
+	 .br_3{
+	 	border: 1px solid  #000;
+	 	width: 30px;
+	 	margin-top: 7px;
+	 	-webkit-transform:rotate(15deg);
+	 }
+     .body{
+     	width: 140px;height: 180px;
+     	background-color: #70737D;
+     	position: absolute;
+     	border-radius: 50% 50% 50% 50% / 70% 70% 40% 40%;
+     	top: 205px;left: 46px;
+     }
+     .foot_l{
+     	height: 20px;width: 30px;
+     	background-color: #fff;
+        position: absolute;
+		top: 367px;
+		left: 80px;
+     	border-radius: 50% 50% 30% 30%;
+
+     }
+     .foot_r{
+    	height: 20px;width: 30px;
+     	background-color: #fff;
+        position: absolute;
+		top: 367px;
+		left: 125px;
+     	border-radius: 50% 50% 30% 30%;
+     }
+     .tail{
+		height: 127px;
+		width: 150px;
+		position: absolute;
+		top: 289px;
+		left: 40px;
+		border-left: 20px solid #70737D;
+		border-bottom: 20px solid #70737D;
+		border-radius: 90px 0px 90px 100px;
+     }
+     @-webkit-keyframes shake{
+	     0%, 100% {-webkit-transform: rotate(21deg);}
+		5%,  25%,  45%,  65%,  85% {-webkit-transform: rotate(14deg);;}
+		 20%, 30%,  50%,  70%, 90% {-webkit-transform: rotate(25deg);;}
+     }
+     @-webkit-keyframes movel{
+     	5%,  25%,  45%,  65%,  85% {-webkit-transform: rotate(-5deg);;}
+		20%, 30%,  50%,  70%, 90% {-webkit-transform: rotate(5deg);;}
+     }
+     @-webkit-keyframes jump{
+     	50%{
+     		-webkit-transform:translateY(-160px);
+     	}
+     	 0%, 100% {-webkit-transform: translateY(0px);}
+     }
+     @-webkit-keyframes changel{
+     	0% {-webkit-transform: scale(1,1);}
+		49% {-webkit-transform: scale(1,1);}
+		50% {-webkit-transform: scale(1,0);}
+		51% {-webkit-transform: scale(1,0);}
+		52% {-webkit-transform: scale(1,1);}
+		53% {-webkit-transform: scale(1,1);}
+		54% {-webkit-transform: scale(1,0);}
+		55% {-webkit-transform: scale(1,0);}
+		56% {-webkit-transform: scale(1,1);}
+		100% {-webkit-transform: scale(1,1);}
+     }
+     .shake{
+     	-webkit-animation: shake 10s infinite;
+		-moz-animation: shake 10s infinite;
+		-ms-animation: shake 10s infinite;
+		animation: shake 10s infinite;
+	 }
+     .move{
+     	-webkit-animation: movel 4s infinite;
+		-moz-animation: movel 4s infinite;
+		-ms-animation: movel 4s infinite;
+		animation: movel 4s infinite;
+
+     }
+     .jump{
+		-webkit-animation: jump 2s 1;
+		-moz-animation: jump 2s 1;
+		-ms-animation: jump 2s 1;
+		animation: jump 2s 1;
+     }
+     .changel{
+     	-webkit-animation: changel 6s infinite;
+		-moz-animation: changel  6s infinite;
+		-ms-animation: changel 6s infinite;
+		animation: changel 6s infinite;
+     }
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="header">
+		    <div class="fish_eye"></div>
+		    <div class="fish">
+			</div>
+			<div class="feet">
+			</div>
+			
+		</div>
+		<div class="content">
+			<div class="cat">
+				<div class="ear" id="ear_l"></div>
+				<div class="ear shake" id="ear_r"></div>
+				<div class="face">
+					<div class="eye_l changel ">
+						<div class="eye_in_l changel"></div>
+					</div>
+					<div class="eye_r changel">
+						<div class="eye_in_r changel"></div>
+					</div>
+					<div class="nose"></div>
+					<div class="mouth"></div>
+					<div class="beard_l">
+						<div class="bl_1"></div>
+						<div class="bl_2"></div>
+						<div class="bl_3"></div>
+					</div>
+					<div class="beard_r">
+						<div class="br_1"></div>
+						<div class="br_2"></div>
+						<div class="br_3"></div>
+					</div>
+
+				</div>
+				<div class="body">
+					<div class="arm_l"></div>
+					<div class="arm_r"></div>
+				</div>
+				<div class="footer">
+					<div class="foot_l"></div>
+					<div class="foot_r"></div>
+				</div>
+				<div class="tail move"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

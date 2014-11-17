@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>七巧板</title>
+</head>
+<body>
+	<canvas id="canvas" style="border:3px solid #eee;margin:0 auto;display:block;">
+		
+	</canvas>
+	<script type="text/javascript">
+	var tangram=[
+	{p:[{x:0,y:0},{x:400,y:0},{x:200,y:200}],color:"#caff67"},
+    {p:[{x:400,y:0},{x:800,y:0},{x:800,y:400}],color:"#67becf"},
+    {p:[{x:400,y:400},{x:200,y:200},{x:400,y:0},{x:600,y:200}],color:"#ef3d61"},
+    {p:[{x:0,y:800},{x:400,y:400},{x:800,y:800}],color:"#f9f51a"},
+    {p:[{x:400,y:400},{x:600,y:200},{x:600,y:600}],color:"#fa8ecc"},
+    {p:[{x:0,y:0},{x:0,y:800},{x:400,y:400}],color:"#6ca29"},
+    {p:[{x:600,y:200},{x:800,y:400},{x:800,y:800},{x:600,y:600}],color:"#a594c0"}
+
+	]
+	 window.onload=function(){
+	 	var canvas=document.getElementById("canvas");
+	 	canvas.width=800;
+	 	canvas.height=800;
+
+	 	var context=canvas.getContext("2d");
+
+	 	for (var i = 0; i < tangram.length; i++) {
+	 		draw(tangram[i],context);
+	 	};
+	 }
+
+	 function draw(piece,cxt){
+	 	cxt.beginPath();
+	 	cxt.moveTo(piece.p[0].x,piece.p[0].y);
+	 	for (var i = 0; i < piece.p.length; i++) {
+	 		cxt.lineTo(piece.p[i].x,piece.p[i].y);
+	 	};
+	 	cxt.closePath();
+	 	cxt.fillStyle=piece.color;
+	 	cxt.fill();
+	 	cxt.strokeStyle="black";
+	 	cxt.lineWidth=2;
+	 	cxt.stroke();
+
+	 }
+	// window.onload=function(){
+	//  	var canvas=document.getElementById("canvas");
+	//  	canvas.width=800;
+	//  	canvas.height=800;
+	//  	var context=canvas.getContext("2d");
+	 	// context.beginPath();
+	 	// context.moveTo(0,0);
+	 	// context.lineTo(400,0);
+	 	// context.lineTo(200,200);
+	 	// context.fillStyle="#808080";
+	 	// context.fill();
+	 	// context.closePath();
+
+	 	// context.beginPath();
+	 	// context.moveTo(400,0);
+	 	// context.lineTo(800,0);
+	 	// context.lineTo(800,400);
+	 	// context.fillStyle="#ccc";
+	 	// context.fill();
+	 	// context.closePath();
+
+	 	// context.beginPath();
+	 	// context.moveTo(0,0);
+	 	// context.lineTo(0,800);
+	 	// context.lineTo(400,400);
+	 	// context.fillStyle="#e33a3d";
+	 	// context.fill();
+	 	// context.closePath();
+
+	 	// context.beginPath();
+	 	// context.moveTo(0,800);
+	 	// context.lineTo(400,400);
+	 	// context.lineTo(800,800);
+	 	// context.fillStyle="yellow";
+	 	// context.fill();
+	 	// context.closePath();
+
+	 	// context.beginPath();
+	 	// context.moveTo(400,400);
+	 	// context.lineTo(600,200);
+	 	// context.lineTo(600,600);
+	 	// context.fillStyle="blue";
+	 	// context.fill();
+	 	// context.closePath();
+        
+   //      context.beginPath();
+	 	// context.moveTo(400,400);
+	 	// context.lineTo(200,200);
+	 	// context.lineTo(400,0);
+	 	// context.lineTo(600,200);
+	 	// context.fillStyle="pink";
+	 	// context.fill();
+	 	// context.closePath();
+
+	 // 	context.beginPath();
+	 // 	context.moveTo(600,200);
+	 // 	context.lineTo(800,400);
+	 // 	context.lineTo(800,800);
+	 // 	context.lineTo(600,600);
+	 // 	context.fillStyle="green";
+	 // 	context.fill();
+	 // 	context.closePath();
+
+	 // }
+	</script>
+</body>
+</html>
