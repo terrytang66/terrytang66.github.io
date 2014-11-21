@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+  <script>
+      function person(){
+          var _this={};
+         _this.sayHello=function(){
+             alert("hello");
+         }
+          return _this;
+      }
+      function teacher(){
+          var _this=person();
+          var supers=_this.sayHello();
+          _this.sayHello=function(){
+              supers.call(_this);
+              alert("ttt");
+          }
+          return _this;
+      }
+      var t =teacher();
+      t.sayHello();
+  </script>
+</body>
+</html>

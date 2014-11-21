@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>面向对象01</title>
+
+</head>
+<body>
+<script>
+    //var person={
+    //        name:"iwen",
+    //        age: '30',
+    //        eat:function(){
+    //        alert("eat");
+    //    }
+    //}
+    //alert(person.name);
+    //function person(){
+    //
+    //}
+    //person.prototype={
+    //    name:"ec",
+    //    age:30,
+    //    eat: function () {
+    //        alert("ear");
+    //    }
+    //};
+    //var p = new person();
+    (function(){
+        var n="iwebs";//信息隐藏
+        function people(name){s
+            this._name=name;
+
+        }
+        people.prototype.say=function(){
+            alert("peo-hello"+this._name+n);
+        }
+        window.people=people;
+    }());
+
+
+    (function () {
+        function student(name){
+            this._name=name;//进行索引
+
+        }
+        student.prototype=new people();
+        var supersay=student.prototype.say;
+
+        student.prototype.say=function(){
+            supersay.call(this);
+            alert("ssss"+this._name);
+        }
+        window.student=student;
+    }());
+
+
+    var s  = new student ('wc');
+    s.say();
+</script>
+</body>
+</html>

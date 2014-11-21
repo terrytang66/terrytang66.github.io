@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>瀑布流</title>
+    <style type="text/css" rel="stylesheet">
+        *{
+         margin: 0px;padding: 0px;
+        }
+        #container{
+            position: relative;
+        }
+        .box{
+            padding: 5px;
+            float: left;
+        }
+        .box_img{
+            padding: 5px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 5px #ccc;
+            border-radius: 5px;
+        }
+        .box_img img{
+            width: 150px;
+            height: auto;
+        }
+    </style>
+   
+</head>
+<body>
+    <div id="container">
+        <div class="box">
+            <div class="box_img">
+                <img src="img/1.jpg">
+            </div>
+        </div>
+        <div class="box">
+            <div  class="box_img">
+                <img src="img/2.jpg">
+            </div>
+        </div>
+        <div class="box">
+            <div  class="box_img">
+                <img src="img/3.jpg">
+            </div>
+        </div>
+        <div class="box">
+            <div  class="box_img">
+                <img src="img/4.jpg">
+            </div>
+        </div>
+        <div class="box">
+            <div  class="box_img">
+                <img src="img/5.jpg">
+            </div>
+        </div>
+        <div class="box">
+            <div  class="box_img">
+                <img src="img/1.jpg">
+            </div>
+        </div>
+        <div class="box">
+            <div  class="box_img">
+                <img src="img/6.jpg">
+            </div>
+        </div>
+        <div class="box">
+            <div  class="box_img">
+                <img src="img/7.jpg">
+            </div>
+        </div>
+        <div class="box">
+            <div  class="box_img">
+                <img src="img/8.jpg">
+            </div>
+        </div>
+        <div class="box">
+            <div  class="box_img">
+                <img src="img/9.jpg">
+            </div>
+        </div>
+        <div class="box">
+            <div  class="box_img">
+                <img src="img/2.jpg">
+            </div>
+        </div>
+        <div class="box">
+            <div  class="box_img">
+                <img src="img/3.jpg">
+            </div>
+        </div>
+        <div class="box">
+            <div  class="box_img">
+                <img src="img/4.jpg">
+            </div>
+        </div>
+        <div class="box">
+            <div  class="box_img">
+                <img src="img/5.jpg">
+            </div>
+        </div>
+         <div class="box">
+            <div class="box_img">
+                <img src="img/1.jpg">
+            </div>
+        </div>
+        <div class="box">
+            <div  class="box_img">
+                <img src="img/2.jpg">
+            </div>
+        </div>
+        <div class="box">
+            <div  class="box_img">
+                <img src="img/3.jpg">
+            </div>
+        </div>
+        <div class="box">
+            <div  class="box_img">
+                <img src="img/4.jpg">
+            </div>
+        </div>
+        <div class="box">
+            <div  class="box_img">
+                <img src="img/5.jpg">
+            </div>
+        </div>
+        <div class="box">
+            <div  class="box_img">
+                <img src="img/1.jpg">
+            </div>
+        </div>
+        <div class="box">
+            <div  class="box_img">
+                <img src="img/6.jpg">
+            </div>
+        </div>
+        <div class="box">
+            <div  class="box_img">
+                <img src="img/7.jpg">
+            </div>
+        </div>
+        <div class="box">
+            <div  class="box_img">
+                <img src="img/8.jpg">
+            </div>
+        </div>
+        <div class="box">
+            <div  class="box_img">
+                <img src="img/9.jpg">
+            </div>
+        </div>
+        <div class="box">
+            <div  class="box_img">
+                <img src="img/2.jpg">
+            </div>
+        </div>
+        <div class="box">
+            <div  class="box_img">
+                <img src="img/3.jpg">
+            </div>
+        </div>
+        <div class="box">
+            <div  class="box_img">
+                <img src="img/4.jpg">
+            </div>
+        </div>
+        <div class="box">
+            <div  class="box_img">
+                <img src="img/5.jpg">
+            </div>
+        </div>
+    </div>
+ <script>
+        window.onload=function(){
+            imglocation("container","box");
+            
+            window.onscroll= function(){
+            var imgData={ "data":[{"src":"2.jpg"},{"src":"4.jpg"},{"src":"1.jpg"},{"src":"6.jpg"},{"src":"8.jpg"},{"src":"7.jpg"},{"src":"5.jpg"},]
+            };
+              if(checkflag()){
+                var cparent=document.getElementById("container");
+                  for(var i=0;i<imgData.data.length;i++){
+                      var ccontent=document.createElement("div");
+                      ccontent.className="box";
+                      cparent.appendChild(ccontent);
+                      var boximg=document.createElement("div");
+                      boximg.className="box_img";
+                      ccontent.appendChild(boximg);
+                      var oimg=document.createElement("img");
+                      oimg.src="./img/"+imgData.data[i].src;
+                      boximg.appendChild(oimg);
+                  }
+                  imglocation("container","box");
+              }
+            }
+        }
+        function checkflag(){
+            var cparent=document.getElementById("container");
+            var ccontent=getChild(cparent,"box");
+            var lastcontenth=ccontent[ccontent.length-1].offsetTop+Math.floor(ccontent[ccontent.length-1].offsetHeight/2);
+            var scrolltop=document.documentElement.scrollTop||document.body.scrollTop;
+            var pageheight=document.documentElement.clientHeight||document.body.clientHeight;
+           return(lastcontenth<scrolltop+pageheight)?true:false;
+           
+        }
+        function imglocation(parent,content){
+            var  cparent=document.getElementById(parent);
+            var ccontent=getChild(cparent,content);
+            var imgwidth=ccontent[0].offsetWidth;
+            var cols = parseInt(document.documentElement.clientWidth/imgwidth);
+            cparent.style.cssText="width:"+imgwidth*cols+"px;margin:0 auto;";
+            var boxheightarr=[];
+            for(var i=0;i<ccontent.length;i++){
+                if(i<cols) {
+                    boxheightarr[i] = ccontent[i].offsetHeight;
+                }else{
+                    var minheight=Math.min.apply(null,boxheightarr);
+                    var minindex=getmin(boxheightarr,minheight);
+                    ccontent[i].style.position="absolute";
+                    ccontent[i].style.top=minheight+"px";
+                    ccontent[i].style.left=ccontent[minindex].offsetLeft+"px";
+                    boxheightarr[minindex]=boxheightarr[minindex]+ccontent[i].offsetHeight;
+
+                }
+            }
+        }
+        function getmin(box,minhei){
+            for(var i in box){
+                if(box[i]==minhei){
+                    return i;
+                }
+            }
+        }
+        function getChild(parent,content){
+            var contentArr=[];
+            var allcontent=parent.getElementsByTagName("*");
+            for(var i=0;i<allcontent.length;i++){
+                if(allcontent[i].className==content){
+                    contentArr.push(allcontent[i]);
+                }
+            }
+            return contentArr;
+        }
+    </script>
+</body>
+</html>
