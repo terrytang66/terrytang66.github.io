@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动态生成表格</title>
+	<style type="text/css">
+	.hole{
+		font-size: 24px;color: yellow;
+	}
+	</style>
+</head>
+<body id="body">
+	<script type="text/javascript">
+	 // function createTable(){
+	 // 	var oBody=document.getElementById("body");
+	 // 	var oTable=document.createElement("table");
+	 // 	oTable.style.border="1px solid #ccc";
+	 // 	 oBody.appendChild(oTable);
+	 // 	 var oTr=document.createElement("tr");
+	 // 	 oTable.appendChild(oTr);
+	 // 	 var oTd=document.createElement("td");
+	 // 	 oTd.innerHTML="hello word";
+	 // 	  var oTd1=document.createElement("td");
+	 // 	 oTd1.innerHTML="hello word";
+	 // 	  var oTd2=document.createElement("td");
+	 // 	 oTd2.innerHTML="hello word";
+	 // 	 oTr.appendChild(oTd);
+	 // 	 oTr.appendChild(oTd1);
+	 // 	 oTr.appendChild(oTd2);
+	 // }
+
+	  //建表
+		function createTable2() {
+			var arry=[["ID","年龄","部门","收入","时间"],["1","18","IT","123","五月"],["3","23","企划","34676","一月"],["5","14","设计","3332","三月"],["4","11","管理","123","二月"]];
+			var oBody=document.getElementById("body");
+			var t = document.createElement('table');
+			var b = document.createElement('tbody');
+			t.style.width="400px";
+			t.style.border="1px solid #ccc";
+			b.style.textAlign="center";
+			for (var i = 0; i < arry.length; i++) {
+				var r = document.createElement('tr');
+				var arr1=arry[i];
+				for (var j = 0; j < arr1.length; j++) {
+					var c = document.createElement('td');
+					c.style.border="1px solid #ccc";
+					var m = document.createTextNode(arry[i][j]);
+					m.className="hole";
+
+					c.appendChild(m);
+					r.appendChild(c);
+				}
+				b.appendChild(r);
+			}
+			t.appendChild(b);
+			oBody.appendChild(t);
+			t.setAttribute('border', '1');
+		}
+		createTable2();
+		//排序
+ 		
+
+	</script>
+</body>
+</html>

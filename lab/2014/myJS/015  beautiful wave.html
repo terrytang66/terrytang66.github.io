@@ -24,6 +24,9 @@
 		border:5px solid #1c1c1c;
 		cursor: pointer;
 	}
+	.clear{
+		clear: both;
+	}
 	@-webkit-keyframes wave {
 		0% { -webkit-transform: translateY(0); background-color: #808687;}
 		50% { -webkit-transform: translateY(-15px); background-color: #f700ff;}
@@ -38,10 +41,12 @@
 <script type="text/javascript">
 	window.onload=function(){
 		var contain=document.getElementById("contain");
-	   contain.onclick=function(ev){
+		var  ob=document.createElement("br");
+		ob.className="clear";
+		contain.appendChild(ob);
+	    contain.onclick=function(ev){
 	   	var oEvent=ev||event;
 	   	this.className="cir wave";
-	   	this.style.clear="both";
 	   }
 	}
 </script>
