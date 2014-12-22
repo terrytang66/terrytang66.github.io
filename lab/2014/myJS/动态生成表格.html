@@ -4,9 +4,6 @@
 	<meta charset="UTF-8">
 	<title>动态生成表格</title>
 	<style type="text/css">
-	.hole{
-		font-size: 24px;color: yellow;
-	}
 	</style>
 </head>
 <body id="body">
@@ -29,7 +26,7 @@
 	 // 	 oTr.appendChild(oTd2);
 	 // }
 
-	  //建表
+	  //建表 start 
 		function createTable2() {
 			var arry=[["ID","年龄","部门","收入","时间"],["1","18","IT","123","五月"],["3","23","企划","34676","一月"],["5","14","设计","3332","三月"],["4","11","管理","123","二月"]];
 			var oBody=document.getElementById("body");
@@ -44,22 +41,41 @@
 				for (var j = 0; j < arr1.length; j++) {
 					var c = document.createElement('td');
 					c.style.border="1px solid #ccc";
+					c.style.backgroundColor="#eee";
 					var m = document.createTextNode(arry[i][j]);
-					m.className="hole";
 
 					c.appendChild(m);
 					r.appendChild(c);
 				}
 				b.appendChild(r);
 			}
+		
 			t.appendChild(b);
 			oBody.appendChild(t);
 			t.setAttribute('border', '1');
 		}
+		
+		function setId(){
+			var oTable=document.getElementsByTagName("table")[0];
+			var oRows=oTable.rows[0].cells;
+	 		for(var i = 0, length1 = oRows.length; i < length1; i++){
+	 		  	oRows[i].setAttribute("id",i);
+	 		}
+		}
 		createTable2();
-		//排序
- 		
+		setId();
+        //建表 end
+        //筛选
+       function sortTable(){
+       	var oDiv=document.getElementsByTagName("table")[0].rows[0].cells;
+       for(var i = 0, length1 = oDiv.length; i < length1; i++){
+	       	oDiv[i].onclick=function(){
+	       		alert(i);
+	       	}
+       	}
+       }
+      sortTable();
 
-	</script>
+	</script>	
 </body>
 </html>

@@ -1,36 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>beautiful wave</title>
-    <style type="text/css">
-	body{
+<!DOCTYPE html >
+	<html lang = "en" >
+	<head >
+	<meta charset = "UTF-8" >
+	<title> beautiful wave </title> 
+	<style type = "text/css" >
+	body {
 		background-color: #000;
 	}
 	.contain{
-
 		height: 510px;
 		width: 700px;
 		margin: 0 auto;
 		clear: both;
 		margin-top: 50px;
+		overflow: hidden;
 	}
 	.cir{
-		height: 10px;width: 10px;
 		float: left;
-		margin:5px;
+		height: 10px;
+		width: 10px;
+		border: 5px solid #1c1c1c;
 		border-radius: 50%;
 		background-color: #808687;
-		border:5px solid #1c1c1c;
 		cursor: pointer;
 	}
 	.clear{
 		clear: both;
 	}
-	@-webkit-keyframes wave {
-		0% { -webkit-transform: translateY(0); background-color: #808687;}
-		50% { -webkit-transform: translateY(-15px); background-color: #f700ff;}
-		100% { -webkit-transform: translateY(0); background-color: #808687;}
+	@-webkit-keyframes wave{
+		0% {-webkit-transform:translateY(0); 
+			background-color:#808687;
+		}
+		50% {
+			-webkit-transform: translateY(-15px);
+			background-color: #f700ff;
+		}
+		100% {
+				-webkit-transform: translateY(0);
+				background-color: #808687;
+		}
 	}
 	.wave{
         -webkit-animation:wave 2s linear;
@@ -38,414 +46,79 @@
     </style>
 </head>
 <body>
-<script type="text/javascript">
-	window.onload=function(){
-		var contain=document.getElementById("contain");
-		var  ob=document.createElement("br");
-		ob.className="clear";
-		contain.appendChild(ob);
-	    contain.onclick=function(ev){
-	   	var oEvent=ev||event;
-	   	this.className="cir wave";
-	   }
+<script type= "text/javascript" >
+	//事件代理
+	function myAddEvent(obj, ev, fn) {
+		if (obj.attachEvent) {
+			obj.attachEvent("on" + ev, fn); //支持IE
+		} else {
+			obj.addEventListener(ev, fn, false); //非IE
+		}
 	}
-</script>
-	<div class="contain" id="contain">
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
-		<div class="cir"></div>
+	//创建div
+	function create(pos){
+		var contain = document.getElementById("contain");
+		for(var pos = 0, length1 =500; pos < length1; pos++){
+			var od=document.createElement("div");
+			od.style.margin="4px";
+			od.className="cir";
+			od.id="card"+pos;
+			contain.appendChild(od);	
 
+		}
+		var ospan=document.createElement("br");
+		ospan.className="clear";
+		contain.appendChild(ospan);
+	}
+	//添加wave样式
+	function addClass(id){
+		var cardId=document.getElementById("card"+id);
+		cardId.className="wave cir";
+		setTimeout(function() {
+			cardId.className ="cir";
+		}, 2000);
+	}
+	//wave功能
+	function startwave(id){
+		addClass(id);
+		setTimeout(function(){
+			document.getElementById("card"+(parseInt(id)+1)).click();
+			document.getElementById("card"+(parseInt(id)-1)).click();
+			document.getElementById("card"+(parseInt(id)+25)).click();
+			document.getElementById("card"+(parseInt(id)-25)).click();
+		},500);
 
+		// setTimeout(function(){
+		// 	document.getElementById("card"+(parseInt(id))).click();
 
+		// 	startwave(ev,id);
 
-	</div>
-</body>
+		// },800);
+
+	}
+	function oncl(){
+		myAddEvent(contain, "click", function(ev) {
+			var oEvent = ev || event;
+			var oTarge = oEvent.target || oEvent.srcElement;
+			if (oTarge && oTarge.nodeName.toLowerCase() == "div") {
+				this.onclick="";
+				var ob=oTarge.id;
+                ob=ob.substring(4);	
+                startwave(oEvent,ob);
+			} 
+		});
+	}
+    //主程序
+	window.onload = function() {
+		var contain = document.getElementById("contain");
+		function flip(pos){
+			create(pos);
+			oncl();
+		};
+		flip();
+	} 
+</script> 
+	<div class = "contain" id = "contain" >
+	</div> 
+	</body> 
 </html>

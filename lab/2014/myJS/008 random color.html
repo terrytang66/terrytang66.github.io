@@ -6,18 +6,13 @@
 	<style type="text/css">
     #main{
     	background-color: #000000;
-    	padding: 20px 20px;
+    	padding: 0px;
 	    text-align: right;
+	    height:960px;width: 100%;
 	    z-index: 100;
     }
-    #container {
-        padding-bottom: 8px;
-        height: 960px;
- 
-	}
 
     .drop {
-	
 	position: absolute;
 	-webkit-animation: grow 2s;
 	-moz-animation: grow 2s;
@@ -159,10 +154,8 @@
 	</style>
 </head>
 <body id="main">
-<div id="container"></div>
 	 <script type="text/javascript">
 		var oMain=document.getElementById("main");
-		var oCon=document.getElementById("container");
 		oMain.onclick=function(ev){
 			var oEvent=ev||event;
 			var oLeft=oEvent.clientX+'px';

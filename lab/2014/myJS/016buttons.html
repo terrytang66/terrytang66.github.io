@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Buttons</title>
+	<style type="text/css">
+	body{
+		background-color: #333333;
+		font-family: 微软雅黑;
+		font-size: 18px;
+		line-height: 40px;
+		color: #fff;
+		text-align: center;
+	}
+
+	.btn1{
+		height: 50px;width: 100px;
+		border-radius: 40%;
+		display: block;
+		background-color: orange;
+		box-shadow: 2px 2px #000;
+	}
+	.btn1:active{
+		background-color: yellow;
+	}
+	.btn2{
+		height: 40px;width: 120px;
+		border-radius: 5px;
+		display: none;
+		box-shadow: 2px 2px #000;
+		background-color: #e9967a;
+	}
+	.btn2:active{
+		background-color: #ff4500;
+	}
+	.btn3{
+		height: 80px;width: 80px;
+		border-radius: 5px;display: none;
+		box-shadow: 2px 2px #000;
+		background-color: #66ff99;
+	}
+	.btn3:active{
+		background-color: #66ff00;
+	}
+	.btn4{
+		height: 80px;width: 80px;
+		border-radius: 50%;display: none;
+		box-shadow: 2px 2px #000;
+		background-color: #33cccc;
+	}
+	.btn4:active{
+		background-color: #3399ff;
+	}
+	.btn4{
+		height: 40px;width: 150px;
+		border-radius: 5px;display: none;
+		box-shadow: 2px 2px #000;
+		background-color: #00ffff;
+	}
+	.btn4:active{
+		border:2px solid #fff;
+	}
+	.btn0{
+		height: 40px;width: 150px;
+		border-radius: 5px;display: none;
+		box-shadow: 2px 2px #000;
+		background-color: #ff66ff;
+	}
+	.btn0:active{
+		border:2px solid #ff6699;
+	}
+	</style>
+</head>
+<body>
+	<div id="contain">
+	<div class="btn1">click</div>
+	<div class="btn2">click</div>
+	<div class="btn3">click</div>
+	<div class="btn4">click</div>
+	<div class="btn0">click</div>
+	</div>
+	<script type="text/javascript">
+	function randomInt(min,max){
+	  	return Math.floor(Math.random()*(max-min+1)+min);
+	}
+	function newBtn(){
+		var btn=randomInt(0,4);
+		var oDiv=document.getElementById("contain");
+		var oBtn=oDiv.getElementsByTagName("div")[btn];
+		oBtn.style.left=randomInt(50,1200)+"px";
+		oBtn.style.top=randomInt(50,500)+"px";
+		oBtn.style.display="block";
+		oBtn.innerHTML="click";
+		oBtn.style.position="absolute";
+	}
+	window.onload=function(){
+		var oDiv=document.getElementById("contain");
+ 		var oBtn=oDiv.getElementsByTagName("div");
+ 		for(var i = 0, length1 = oBtn.length; i < length1; i++){
+ 			oBtn[i].onclick=function(){
+ 			this.style.display="none";
+ 			newBtn();
+ 			}
+ 		}
+
+
+	}
+	</script>
+</body>
+</html>
