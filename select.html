@@ -30,6 +30,12 @@
             if (browser.versions.ios || browser.versions.iPhone || browser.versions.iPad) {
                 document.write("ios  ios");
                 window.location="https://itunes.apple.com/cn/app/jing-dong-dao-jia-xin-yong/id954995415?mt=8";
+                function getLink(){
+                    var  btn=document.getElementById("imd");
+                    btn.href="https://itunes.apple.com/cn/app/jing-dong-dao-jia-xin-yong/id954995415?mt=8";
+                    btn.click();
+                }
+                getLink();
             }
             else if (browser.versions.android) {
                 window.location="http://a.app.qq.com/o/simple.jsp?pkgname=com.jingdong.pdj";
@@ -37,5 +43,6 @@
         </script>
     </head>
     <body>
+        <a id="imd"></a>
     </body>
 </html>
